@@ -1,0 +1,128 @@
+.container {
+  display: flex;
+  width: 90%;
+  margin: 2em auto;
+}
+/* Account Settings */
+div.myaccount {
+  padding-bottom: 5em;
+  font-size: large;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 400px;
+}
+.save {
+  font-weight: bold;
+  width: 150px;
+  height: 40px;
+  border: none;
+  color: #f8efd6;
+  background-color: black;
+  border-radius: 50px;
+}
+.save:hover {
+  cursor: pointer;
+  background-color: rgb(60, 60, 60);
+  color: #f8efd6;
+  transition: all 200ms;
+  margin-bottom: 0%;
+}
+.input {
+  width: 200px;
+  height: 40px;
+  border-radius: black;
+  background-color: #f8efd6;
+  font-size: 15px;
+  box-shadow: 2px 2px 2px black;
+  padding: 0 4px;
+  margin-left: 1em;
+}
+.fullname,
+.username,
+.phonenumber,
+.email,
+.password {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.username {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+.phonenumber {
+  margin-bottom: 1em;
+}
+.email {
+  margin-bottom: 1em;
+}
+.savebutton {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+}
+.input:focus {
+  cursor: pointer;
+  border-top: none;
+}
+.myaccount > h1 {
+  margin-bottom: 2em;
+  font-size: 45px;
+}
+/* end of account setting */
+
+/*accountlist */
+.accountlist {
+  border-right: 2px solid black;
+}
+.accountlist > p {
+  font-size: 40px;
+  margin-right: 2em;
+  margin-bottom: 1em;
+}
+.profile {
+  color: black;
+  text-decoration: none;
+  margin-right: 2em;
+  margin-top: 2em;
+}
+.addresses {
+  color: black;
+  text-decoration: none;
+  margin-right: 2em;
+  margin-top: 2em;
+}
+.accountlist > ul > li a:hover {
+  color: #84beb5;
+  text-decoration: none;
+}
+.accountlist > ul > li {
+  list-style: none;
+  font-size: large;
+}
+/*end of account list */
+
+/* Media Queries for Mobile Users */
+@media screen and (max-width: 1100px) {
+  .container {
+    display: unset;
+    width: 100%;
+    margin: 2em auto;
+  }
+  .accountlist {
+    border: none;
+  }
+  .profile {
+    color: black;
+    text-decoration: none;
+    margin-right: 4em;
+  }
+  .myaccount > h1 {
+    margin-bottom: 2em;
+    margin-top: 2em;
+    font-size: 45px;
+  }
+  .myaccount > h1 {
+    font-size: 45px;
+  }
+}

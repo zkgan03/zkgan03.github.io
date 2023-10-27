@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi:wght@500&family=Merriweather:wght@300&display=swap");
+
+#manage_email_header {
+  background-image: url("../images/manage_pic1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 80px 0px;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  font-family: "Style Script", cursive;
+}
+#box {
+  padding: 50px;
+  padding-bottom: 10px;
+  margin: 50px;
+  margin-bottom: 10px;
+  background-color: white;
+  border-radius: 30px;
+}
+#box > h1 {
+  padding-bottom: 20px;
+  font-family: "Kaisei HarunoUmi", serif;
+}
+#boxes {
+  padding: 10px;
+}
+#boxes > p,
+.list {
+  font-family: "Merriweather", serif;
+}
+#boxes:hover {
+  padding: 10px;
+  background-color: rgb(230, 228, 228);
+}
+p#word {
+  color: rgb(243, 166, 150);
+}
+.line {
+  border: 1px solid rgb(230, 228, 228);
+}
+
+/* The container */
+.boxbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Hide the browser's default checkbox */
+.boxbox input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  cursor: pointer;
+}
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+/* On mouse-over, add a grey background color */
+.boxbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+/* When the checkbox is checked, add a blue background */
+.boxbox input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* Show the checkmark when checked */
+.boxbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.boxbox .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/*Save button*/
+#button2 {
+  padding: 25px;
+  padding-bottom: 35px;
+  text-align: center;
+}
+.button {
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 8px 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 8px 5px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button1 {
+  background-color: #2196f3;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  font-size: 30px;
+  font-family: "Kaisei HarunoUmi", serif;
+  font-weight: bold;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.button1:hover {
+  background-color: #90e0eb;
+  color: rgb(0, 0, 0);
+  box-shadow: none;
+}
+@media screen and (max-width: 600px) {
+  #manage_email_header {
+    font-size: 30px;
+  }
+  #box {
+    padding: 20px;
+    margin: 20px;
+  }
+}

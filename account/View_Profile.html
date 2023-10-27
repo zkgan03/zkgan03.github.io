@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <!-- Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap">
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../overall_layout.css">
+    <link rel="stylesheet" href="viewprofile.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+    <title>My Account</title>
+</head>
+
+<body>
+    <!-- Loading Animation -->
+    <div class="loading-wrapper">
+        <div class="loading">
+            <img src="../images/loading.gif" alt="Logo_loading">
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="scroll-top">
+        <a href="javascript:void(0)" onclick="backToTop()" title="Back to top"><i
+                class="fas fa-chevron-circle-up"></i></a>
+    </div>
+
+    <!-- Background Image -->
+    <div class="bg-img"></div>
+
+    <!-- Pop Up Search -->
+    <div id="search_popup">
+        <div class="search_form_div">
+            <form id="search_form" action="search.html">
+                <div class="search_form_row1">
+                    <input class="search_box" type="search" placeholder="Search for our products..." name="search"
+                        required>
+                    <button class="search_popup_button" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="search_form_row2">
+                    <button type="button" class="cancel-search" onclick="closeSearch()"
+                        onmouseover="this.innerText = ''" onmouseleave="this.innerText = 'CANCEL'">CANCEL</button>
+                    <button type="submit" class="submit-search" onmouseover="this.innerText = ''"
+                        onmouseleave="this.innerText = 'SEARCH'">SEARCH</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pop Up Login -->
+    <div class="pop-up-login-wrapper">
+        <div class="pop-up-login-wrapper2" onclick="closePopUpLogin()"></div>
+        <div class="pop-up-login-container">
+            <div class="picture">
+                <!-- Image from https://unsplash.com/photos/QZGQO3NvsLo -->
+                <img src="../images/formbackground.jpg" alt="pic">
+            </div>
+            <form class="my-form" action="#">
+                <div class="title">Sign In</div>
+                <div class="input-field">
+                    <input class="form-input" type="text" name="username_email_input" required>
+                    <label class="form-label">E-mail / Username</label>
+                </div>
+                <div class="input-field">
+                    <input class="form-input password-input" type="password" name="password" required>
+                    <span>
+                        <a href="javascript:void(0)" onclick="togglePw()"><i id="show_pw" class="far fa-eye"></i></a>
+                        <a id="show_pw" href="javascript:void(0)" onclick="togglePw()"><i id="hide_pw"
+                                class="far fa-eye-slash"></i></a>
+                    </span>
+                    <label class="form-label" class="password">Password</label>
+                </div>
+                <div class="forgot">
+                    <a href="../resetPassword.html">Forgot Password</a>
+                </div>
+                <div style="text-align: left; margin-top: 15px;">
+                    <input type="checkbox" id="remember-me" value="Remember Me" style="text-align: left;">
+                    <label for="remember-me">Remember Me</label>
+                </div>
+                <input type="submit" class="button" value="Login">
+                <p class="member-link">Not a member? <a class="create-an-acc" href="../signUp.html">Create an
+                        account</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Live Chat -->
+    <button id="popUpLiveChat" onclick="document.querySelector('.chat-wrapper').style.display = 'block'">
+        <i class="far fa-comment"></i>
+        <span id="chat-warning">1</span>
+    </button>
+
+    <div class="chat-wrapper">
+        <div class="chat-heading">
+            <span id="online-status"></span>
+            <img id="customer-service-pic" src="../images/customerService.jpeg" alt="customer service" width="40px">
+            <span>Customer Service<br>[Johnny Sins]</span>
+            <button id="minimize-chat" class="fas fa-minus"
+                onclick="document.querySelector('.chat-wrapper').style.display = 'none'; document.getElementById('chat-warning').style.display = 'none'"></button>
+        </div>
+        <div class="chat-contents">
+            <div class="message-container non-user">
+                <p id="time-now">15:08</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="../images/customerService.jpeg" alt="customer service"
+                        width="25px">
+                    <p>Hello! This is customer service. How can we help you?</p>
+                    <span id="read-status">Read at 15:08</span>
+                </div>
+            </div>
+            <div class="message-container user">
+                <p id="time-now">15:09</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="../images/person1.jpg" alt="user pic" width="25px">
+                    <p>Does your shop opens daily?</p>
+                    <span id="read-status">Read at 15:11</span>
+                </div>
+            </div>
+            <div class="message-container non-user">
+                <p id="time-now">15:59</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="../images/customerService.jpeg" alt="customer service"
+                        width="25px">
+                    <p>Good day to you! Our shop opens daily except for Sundays.</p>
+                    <span id="read-status">Read at 16:00</span>
+                </div>
+            </div>
+            <div class="message-container user">
+                <p id="time-now">16:00</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="../images/person1.jpg" alt="user pic" width="25px">
+                    <p>What time till what time oh..?</p>
+                    <span id="read-status">Read at 16:01</span>
+                </div>
+            </div>
+            <div class="message-container non-user">
+                <p id="time-now">Now</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="../images/customerService.jpeg" alt="customer service"
+                        width="25px">
+                    <p>You figure out yourself lah XD</p>
+                    <span id="read-status">Read at 16:02</span>
+                </div>
+            </div>
+            <div class="message-container" style="margin-left: 1ch;">
+                <p class="typing-status">Typing...</p>
+            </div>
+        </div>
+        <div class="message-input-section">
+            <div class="message-row">
+                <span id="message-input" contenteditable="plaintext-only" role="textbox"></span>
+                <button class="far fa-smile"></button>
+                <button class="far fa-paper-plane"
+                    onclick="document.getElementById('message-input').innerText = ''"></button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Wrapper of whole webpage -->
+    <div class="wrapper">
+        <!-- Promo message header -->
+        <div class="promo_msg" id="promo_msg">
+            <p>Buy over RM100 to get free shipping now</p>
+        </div>
+
+        <div id="sidebar-modal" onclick="closeNav()"></div>
+
+        <!-- Navigation bar -->
+        <header>
+            <div class="navbar" id="navbar">
+                <div class="mobile_search_bar_wrapper" id="mobile_search_bar_wrapper">
+                    <div class="mobile_search_bar" id="mobile_search_bar">
+                        <a href="javascript:void(0)"><i class="fas fa-search"></i></a>
+                        <form id="mobile-search-form" action="search.html">
+                            <input id="mobile-search-input" type="search" placeholder="Search Our Products"
+                                name="search" required>
+                        </form>
+                        <a href="javascript:void(0)" class="close_mobile_search_bar"
+                            onclick="closeMobileSearch()">&times;</a>
+                    </div>
+                </div>
+                <ul class="ul0" id="ul0">
+                    <div class="ul0_div1">
+                        <li>
+                            <a class="menu_bar" onclick="openNav()"><i id="ul0_div1_icon1" class="fas fa-bars"></i></a>
+                        </li>
+                        <li>
+                            <a href="../index.html"><img id="logo0" src="../images/logo2.png" alt="Logo"></a>
+                        </li>
+                    </div>
+                    <div class="ul0_div2">
+                        <li>
+                            <a href="javascript:void(0)"><i id="ul0_div2_icon1" class="fas fa-search"
+                                    onclick="openMobileSearch()"></i></a>
+                        </li>
+                        <li>
+                            <a href="../cart.html" title="View my Cart">
+                                <i id="ul0_div2_icon2" class="far fa-shopping-cart"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <span class="cartItemQuantity"
+                                style="margin-left: 3px; background-color: #84beb5; color: whitesmoke; border-radius: 25px; padding: 0 10px;"></span>
+                        </li>
+                    </div>
+                </ul>
+                <div class="logo">
+                    <a href="../index.html"><img id="logo" src="../images/logo2.png" alt="Logo"></a>
+                </div>
+                <nav>
+                    <ul class="ul1" id="ul1">
+                        <li><a class="ul1_anchor ul1_home" href="../index.html">Home</a></li>
+                        <li><a class="ul1_anchor ul1_about" href="../aboutUs.html">About Us</a></li>
+                        <li class="categories" id="categories"
+                            onmouseover="document.getElementById('expander').className = 'fas fa-angle-up'"
+                            onmouseout="document.getElementById('expander').className = 'fas fa-angle-down'">
+                            <a class="ul1_anchor" href="javascript:void(0)"
+                                style="display: flex; align-items: center;">Categories&nbsp;<i class="fas fa-angle-down"
+                                    id="expander"></i></a>
+                            <div class="categories_menu" id="categories_menu">
+                                <div class="categories_list">
+                                    <dl><a href="../CategoriesProduct/hoodies.html">Hoodies</a></dl>
+                                    <dl><a href="../CategoriesProduct/teeShirt.html">Tee Shirts</a></dl>
+                                    <dl><a href="../CategoriesProduct/sweaters.html">Sweaters</a></dl>
+                                    <dl><a href="../CategoriesProduct/shortsAndPants.html">Shorts and Pants</a></dl>
+                                    <dl><a href="../CategoriesProduct/trouser.html">Trousers</a></dl>
+                                    <dl><a href="../CategoriesProduct/accessories.html">Accessories</a></dl>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="account"
+                            onmouseover="document.getElementById('expander2').className = 'fas fa-angle-up'"
+                            onmouseout="document.getElementById('expander2').className = 'fas fa-angle-down'">
+                            <a class="ul1_anchor" href="javascript:void(0)" style="display: flex; align-items: center;">
+                                <i class="far fa-user"></i>
+                                &nbsp;
+                                <i class="fas fa-angle-down" id="expander2"></i>
+                            </a>
+                            <div class="account_menu" id="account_menu">
+                                <div class="account_menu_list" id="account_menu_list">
+                                    <dd><a href="View_Profile.html">My account</a></dd>
+                                    <dd><a href="Purchase.html">My orders</a></dd>
+                                    <dd><a href="manageEmail.html">Manage Subscription</a></dd>
+                                    <dd><a href="javascript:void(0)" onclick="closeNavSignIn()">Sign In</a></dd>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="search_button">
+                            <a class="ul1_anchor" title="Search" href="javascript:void(0)" onclick="displaySearch()"><i
+                                    class="fas fa-search"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="ul1_anchor" href="../cart.html" title="View my Cart">
+                                <i class="far fa-shopping-cart"></i>
+                            </a>
+                            <span class="cartItemQuantity"
+                                style="margin-left: 3px; background-color: #84beb5; color: whitesmoke; border-radius: 25px; padding: 0 10px;"></span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+
+            <!-- Mobile Expandable Nav Bar -->
+            <div class="ul2_div" id="ul2_div">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <ul class="ul2" id="ul2">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../aboutUs.html">About Us</a></li>
+                    <li>
+                        <a id="categories_anchor" href="javascript:void(0)" onclick="openCategories()">Categories</a>
+                        <button id="open" onclick="openCategories()">&plus;</button>
+                        <button id="close" onclick="closeCategories()">&minus;</button>
+                    </li>
+                    <div class="mobile_categories" id="mobile_categories">
+                        <ul>
+                            <li class="mobile_c_1">
+                                <span><a href="../CategoriesProduct/hoodies.html">Hoodies</a></span>
+                                <span><a href="../CategoriesProduct/teeShirt.html">Tee Shirts</a></span>
+                                <span><a href="../CategoriesProduct/sweaters.html">Sweaters</a></span>
+                                <span><a href="../CategoriesProduct/shortsAndPants.html">Shorts and Pants</a></span>
+                                <span><a href="../CategoriesProduct/trouser.html">Trousers</a></span>
+                                <span><a href="../CategoriesProduct/accessories.html">Accessories</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <li id="account_anchor_li">
+                        <a id="account_anchor" href="javascript:void(0)" onclick="openAccounts()">Account</a>
+                        <button id="open2" onclick="openAccounts()">&plus;</button>
+                        <button id="close2" onclick="closeAccounts()">&minus;</button>
+                    </li>
+                    <div class="mobile_account">
+                        <ul>
+                            <li class="mobile_a_1">
+                                <span><a href="View_Profile.html">My Account</a></span>
+                            </li>
+                            <li class="mobile_a_1">
+                                <span><a href="Purchase.html">My Orders</a></span>
+                            </li>
+                            <li class="mobile_a_1">
+                                <span><a href="manageEmail.html">Manage Subscription</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <li>
+                        <a href="javascript:void(0)" onclick="closeNavSignIn()">Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+
+        <!-- Contents -->
+        <div class="acccontainer">
+            <div class="accountlist">
+                <p>My Account</p>
+                <ul>
+                    <li><a href="View_Profile.html" class="profile">Profile</a></li>
+                    <li><a href="Address.html" class="addresses">Addresses</a></li>
+                </ul>
+            </div>
+
+            <div class="profileoverview">
+                <div class="profiletitle">
+                    <h1>My Profile</h1>
+                </div>
+                <div class="customerDetails">
+                    <div class="name">
+                        <p><strong>Name:</strong> Yap Zi Yan </p>
+                    </div>
+                    <div class="email">
+                        <p><strong>Email:</strong> limgg@gmail.com</p>
+                    </div>
+                    <div class="phonenumber">
+                        <p><strong>Phone Number:</strong> 0124375345</p>
+                    </div>
+                    <div class="editprofile">
+                        <a href="Edit_Profile.html" class="editprofile">Edit Profile</a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer_wrapper">
+                <div class="footer_info footer_info1">
+                    <h2>LOCATIONS</h2>
+                    <div class="footer_desc1">
+                        <p><span>Main Outlet</span><br>30 3 01, Jln Radin Anum<br>Taman Seri Petaling<br>57000 Kuala
+                            Lumpur</p>
+                        <p><span>2nd Outlet</span><br>Unit 5.2, Level 5, Cp Tower 11<br>Section 16/11, Jalan
+                            Damansara<br>46350 Petaling Jaya, Selangor</p>
+                        <p><span>3rd Outlet</span><br>2, Jln Tampoi 7/1<br>Tampoi Industrial Park<br>81200 Johor Bahru,
+                            Johor</p>
+                    </div>
+                </div>
+                <div class="footer_wrapper2">
+                    <div class="footer_info footer_info2">
+                        <h2>CONTACT US</h2>
+                        <div class="contact_us">
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+60123136742">(+60)12 313 6742</a>
+                        </div>
+                        <div class="contact_us">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/601133944238" target="_blank">(+60)11 3394 4238</a>
+                        </div>
+                        <div class="contact_us">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:outmoderncare@gmail.com">outmoderncare@gmail.com</a>
+                        </div>
+                        <div class="contact_us">
+                            <i class="fas fa-envelope" style="visibility: hidden;"></i>
+                            <a href="mailto:ziyanyapzyy@gmail.com">ziyanyapzyy@gmail.com</a>
+                        </div>
+                        <div class="contact_us">
+                            <i class="far fa-comment-alt"></i>
+                            <a href="../contactUs.html">Need Help?</a>
+                        </div>
+                    </div>
+                    <div class="footer_info footer_info3">
+                        <h2>FOLLOW US ON</h2>
+                        <div class="social_icons">
+                            <a href="https://www.facebook.com/lee.zhengjian.1" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/aulimping/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://twitter.com/ZiYan72781323" target="_blank"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a href="https://www.youtube.com/channel/UC26yunKEXh1I3aHisPc0DWg" target="_blank"><i
+                                    class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer_info footer_info4">
+                        <h2>NEWSLETTER</h2>
+                        <div class="newsletter">
+                            <p>Want to get notified about our latest updates?</p>
+                            <form class="newsletter_form" id="newsletter_form">
+                                <input class="newsletter_email" type="email" name="newsletter_email"
+                                    placeholder="Enter Your E-mail" required>
+                                <button class="newsletter_signup" type="submit">SUBSCRIBE</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="payment_hr">
+            <div class="footer_info5">
+                <div class="payment_logo_wrapper">
+                    <!-- http://vectorlogo4u.com/wp-content/uploads/2019/10/Touch-n-Go-Ewallet.png -->
+                    <img id="tng_logo" src="../images/TnG_logo.png" alt="TouchNGo_Logo">
+                    <!-- https://seeklogo.com/images/G/grab-pay-logo-A0CA65B6C4-seeklogo.com.png -->
+                    <img id="grabpay_logo" src="../images/grab_pay_logo.png" alt="GrabPay_Logo">
+                    <!-- https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png -->
+                    <img id="visa_logo" src="../images/visa_logo.png" alt="Visa_Logo">
+                    <!-- https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/773px-Mastercard-logo.svg.png -->
+                    <img id="master_logo" src="../images/mastercard_logo.png" alt="Mastercard_logo">
+
+                    <img id="maybank_logo" src="../images/maybank_logo.png" alt="Maybank_Logo">
+                </div>
+            </div>
+            <div class="footer_info6">
+                <p>© 2021 OutModern</p>
+                <hr>
+                <p><a href="../terms.html">Terms of Use</a> | <a href="../policy.html">Privacy Policy</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../overall_layout.js"></script>
+</body>
+
+</html>

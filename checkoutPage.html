@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <!-- Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap">
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="checkoutPage.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>Customer's Details</title>
+</head>
+
+<body>
+    <!-- Live Chat -->
+    <button id="popUpLiveChat" onclick="document.querySelector('.chat-wrapper').style.display = 'block'">
+        <i class="far fa-comment"></i>
+        <span id="chat-warning">1</span>
+    </button>
+
+    <div class="chat-wrapper">
+        <div class="chat-heading">
+            <span id="online-status"></span>
+            <img id="customer-service-pic" src="images/customerService.jpeg" alt="customer service" width="40px">
+            <span>Customer Service<br>[Johnny Sins]</span>
+            <button id="minimize-chat" class="fas fa-minus"
+                onclick="document.querySelector('.chat-wrapper').style.display = 'none'; document.getElementById('chat-warning').style.display = 'none'"></button>
+        </div>
+        <div class="chat-contents">
+            <div class="message-container non-user">
+                <p id="time-now">15:08</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="images/customerService.jpeg" alt="customer service"
+                        width="25px">
+                    <p>Hello! This is customer service. How can we help you?</p>
+                    <span id="read-status">Read at 15:08</span>
+                </div>
+            </div>
+            <div class="message-container user">
+                <p id="time-now">15:09</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="images/person1.jpg" alt="user pic" width="25px">
+                    <p>Does your shop opens daily?</p>
+                    <span id="read-status">Read at 15:11</span>
+                </div>
+            </div>
+            <div class="message-container non-user">
+                <p id="time-now">15:59</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="images/customerService.jpeg" alt="customer service"
+                        width="25px">
+                    <p>Good day to you! Our shop opens daily except for Sundays.</p>
+                    <span id="read-status">Read at 16:00</span>
+                </div>
+            </div>
+            <div class="message-container user">
+                <p id="time-now">16:00</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="images/person1.jpg" alt="user pic" width="25px">
+                    <p>What time till what time oh..?</p>
+                    <span id="read-status">Read at 16:01</span>
+                </div>
+            </div>
+            <div class="message-container non-user">
+                <p id="time-now">Now</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="images/customerService.jpeg" alt="customer service"
+                        width="25px">
+                    <p>You figure out yourself lah XD</p>
+                    <span id="read-status">Read at 16:02</span>
+                </div>
+            </div>
+            <div class="message-container" style="margin-left: 1ch;">
+                <p class="typing-status">Typing...</p>
+            </div>
+        </div>
+        <div class="message-input-section">
+            <div class="message-row">
+                <span id="message-input" contenteditable="plaintext-only" role="textbox"></span>
+                <button class="far fa-smile"></button>
+                <button class="far fa-paper-plane"
+                    onclick="document.getElementById('message-input').innerText = ''"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-img"></div>
+
+    <div class="checkout-wrapper">
+        <form class="checkout-form" id="checkoutForm">
+            <div class="navbar">
+                <div class="checkout-step">Customer's Details</div>
+            </div>
+            <div class="contact-info-sec">
+                <div class="contact-info">Customer Information</div>
+                <div class="checkbox-column">
+                    <input type="email" onkeyup="checkout1Validation()" class="checkout-email" id="checkoutEmail"
+                        placeholder="Email">
+                    <div class="checkbox-row">
+                        <input type="checkbox" class="updates-checkbox" id="updates-checkbox" name="updates-checkbox">
+                        <label for="updates-checkbox">Keep me up to date on news and offers</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shipping-address-row">
+                <div class="shipping-address">Shipping Address</div>
+                <div class="shipping-address-column">
+                    <div class="shipping-names">
+                        <input type="text" class="first-name name" placeholder="First name (optional)">
+                        <input type="text" onkeyup="checkout1Validation2()" class="last-name name" id="checkoutName"
+                            placeholder="Last Name">
+                    </div>
+                    <input type="text" onkeyup="checkout1Validation3()" class="address1" id="add1"
+                        placeholder="Address line-1">
+                    <input type="text" onkeyup="checkout1Validation4()" class="address2" id="add2"
+                        placeholder="Address line-2">
+                    <input type="text" class="optional-input" placeholder="Apartment, suite, etc. (optional)">
+                    <div class="postcode-country">
+                        <input type="text" onkeyup="checkout1Validation5()" class="postcode" id="postcode" maxlength="5"
+                            placeholder="Postcode">
+                        <select name="country" id="country">
+                            <option value="malaysia">Malaysia</option>
+                            <option value="algeria">Algeria</option>
+                            <option value="angola">Angola</option>
+                            <option value="argentina">Argentina</option>
+                            <option value="australia">Australia</option>
+                            <option value="austria">Austria</option>
+                            <option value="bahamas">Bahamas</option>
+                            <option value="bangladesh">Bangladesh</option>
+                            <option value="brazil">Brazil</option>
+                            <option value="brunei">Brunei</option>
+                            <option value="canada">Canada</option>
+                            <option value="china">China</option>
+                            <option value="colombia">Colombia</option>
+                            <option value="cuba">Cuba</option>
+                            <option value="france">France</option>
+                            <option value="iceland">Iceland</option>
+                            <option value="india">India</option>
+                            <option value="iran">Iran</option>
+                            <option value="iraq">Iraq</option>
+                            <option value="italy">Italy</option>
+                            <option value="japan">Japan</option>
+                            <option value="laos">Laos</option>
+                            <option value="malawi">Malawi</option>
+                            <option value="mexico">Mexico</option>
+                            <option value="new zealand">New Zealand</option>
+                            <option value="pakistan">Pakistan</option>
+                            <option value="philippines">Philippines</option>
+                            <option value="russia">Russia</option>
+                            <option value="singapore">Singapore</option>
+                            <option value="south Korea">South Korea</option>
+                            <option value="sri Lanka">Sri Lanka</option>
+                            <option value="turkey">Turkey</option>
+                            <option value="united kingdom">United Kingdom</option>
+                            <option value="united states of america">United States of America</option>
+                            <option value="vietnam">Vietnam</option>
+                            <option value="yemen">Yemen</option>
+                            <option value="zambia">Zambia</option>
+                        </select>
+                    </div>
+                    <div class="city-state">
+                        <input class="city" type="text" onkeyup="checkout1Validation6()" id="city" placeholder="City">
+                        <input class="state" type="text" onkeyup="checkout1Validation7()" id="state"
+                            placeholder="State / territory">
+                    </div>
+                    <input type="text" class="phone-number" onkeyup="checkout1Validation8()" id="checkoutPhoneNum"
+                        placeholder="Phone Number">
+                    <div class="buttons">
+                        <button type="submit" form="checkoutForm" class="continue-button">Continue to Payment</button>
+                        <a href="cart.html" class="return-button">Return to cart</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="checkoutPage.js"></script>
+</body>
+
+</html>

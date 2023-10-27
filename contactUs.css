@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitter&family=Dosis:wght@600&family=Noto+Sans+TC&display=swap");
+
+#contact_us_header {
+  background-image: url("images/contact_us_pic.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 80px 0px;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  font-family: "Style Script", cursive;
+}
+.container #fname {
+  width: 90%;
+}
+.container #lname {
+  width: 100%;
+}
+.container :is(input[type="text"], select, textarea) {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+.container :is(input[type="text"], select, textarea):focus {
+  outline: 2px solid rgb(248, 210, 37);
+}
+#submit {
+  background-color: black; /*submit button color*/
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1.5em;
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: normal;
+  letter-spacing: 0;
+  font-family: "Bitter", serif;
+  box-shadow: 5px 5px 5px rgb(177, 176, 176);
+}
+#submit:hover {
+  box-shadow: 1px 1px 5px rgb(177, 176, 176);
+}
+#reset {
+  background-color: black; /*reset button color*/
+  color: white;
+  padding: 13px 28px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1.5em;
+  margin-bottom: 0;
+  font-weight: normal;
+  letter-spacing: 0;
+  font-family: "Bitter", serif;
+  font-size: 20px;
+  box-shadow: 5px 5px 5px rgb(177, 176, 176);
+}
+#reset:hover {
+  box-shadow: 1px 1px 5px rgb(177, 176, 176);
+}
+#photo input[type="file"] {
+  display: none;
+}
+#photo label {
+  color: white;
+  height: 40px;
+  width: 165px;
+  background-color: #84beb5; /*choose button*/
+  position: absolute;
+  margin: auto;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: "Noto Sans TC", sans-serif;
+  border-radius: 4px;
+  box-shadow: 3px 3px 5px rgb(177, 176, 176);
+}
+#photo label:hover {
+  box-shadow: 1px 1px 5px rgb(177, 176, 176);
+}
+.container {
+  border-radius: 5px;
+  background-color: whitesmoke; /*form color*/
+  padding: 30px;
+  margin: 30px;
+}
+.box1,
+.box2 {
+  float: left;
+  width: 50%;
+}
+#word {
+  font-size: 20px;
+  font-family: "Style Script", cursive;
+}
+#fname,
+#lname,
+#gender,
+#email,
+#country,
+#subject {
+  font-family: "Style Script", cursive;
+  font-size: 16px;
+}
+@media screen and (max-width: 600px) {
+  #contact_us_header {
+    font-size: 30px;
+  }
+  .container {
+    margin: 20px;
+  }
+  #contact_us_heading p {
+    font-size: 25px;
+  }
+  .box1,
+  .box2 {
+    float: none;
+    width: 100%;
+  }
+  .container #fname,
+  #lname {
+    width: 100%;
+  }
+}

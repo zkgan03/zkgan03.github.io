@@ -1,0 +1,547 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Chakra Petch", sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Live Chat */
+#popUpLiveChat {
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  z-index: 97;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: whitesmoke;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  width: 60px;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+#popUpLiveChat:hover {
+  transform: scale(1.1);
+  transition: all 0.1s;
+}
+#chat-warning {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  right: 0;
+  top: 0;
+  background-color: red;
+  width: 25px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.chat-wrapper {
+  display: none;
+  position: fixed;
+  z-index: 98;
+  bottom: 0;
+  right: 0;
+  width: 85vw;
+  max-width: 350px;
+  min-width: 300px;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  border-radius: 15px 15px 0 0;
+}
+.chat-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1em;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #f8efd6;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 15px 15px 0 0;
+}
+.chat-heading :nth-child(n + 3) {
+  flex: 1 1 12.5%;
+}
+.chat-heading :last-child {
+  flex: 0 0 12.5%;
+}
+#online-status {
+  width: 10px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: lightgreen;
+}
+#customer-service-pic {
+  border-radius: 50%;
+}
+#minimize-chat {
+  border: none;
+  color: whitesmoke;
+  background-color: transparent;
+  cursor: pointer;
+}
+.chat-contents {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background-color: whitesmoke;
+  padding: 1em;
+  height: 50vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.chat-contents::-webkit-scrollbar {
+  width: 12.5px;
+}
+.chat-contents::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 100px;
+  background-clip: content-box;
+}
+.chat-contents::-webkit-scrollbar-thumb:hover {
+  transition: all 0.3s;
+  background-color: black;
+}
+.chat-contents::-webkit-scrollbar-track {
+  border-radius: 100px;
+  background-color: lightgrey;
+}
+.message-container {
+  display: flex;
+  flex-direction: column;
+}
+#time-now {
+  text-align: center;
+  font-size: 0.75rem;
+}
+.message-heading {
+  display: flex;
+  align-items: center;
+}
+.messages {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+.messages p {
+  padding: 0.75em;
+  border-radius: 1em;
+}
+.non-user .messages p {
+  background-color: rgba(211, 211, 211, 0.5);
+}
+.user .messages p {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+.user .messages,
+.user .messages * {
+  align-self: flex-end;
+}
+.messages #read-status {
+  font-size: 0.75em;
+  margin: 0 1ch;
+}
+.message-row {
+  display: flex;
+  border-top: 1px solid rgba(128, 128, 128, 0.5);
+}
+.message-input-section {
+  background-color: whitesmoke;
+}
+#message-input {
+  flex: 0 0 75%;
+  font-size: 1.05rem;
+  padding: 0.8em;
+  outline: none;
+  overflow: auto;
+  background-color: whitesmoke;
+  max-height: 7.5ch;
+  position: relative;
+}
+#message-input::after {
+  content: "Aa";
+  position: absolute;
+}
+#message-input:focus::after {
+  display: none;
+}
+.message-row button {
+  flex: 0 0 12.5%;
+  border: none;
+  cursor: pointer;
+  background-color: whitesmoke;
+}
+.message-row button:hover {
+  background-color: rgba(211, 211, 211, 0.5);
+}
+.message-row button:active {
+  background-color: rgba(211, 211, 211);
+}
+/* End of Live Chat */
+
+.bg-img {
+  /* Image from https://unsplash.com/photos/VsLkbH-hLAY */
+  background-image: url("images/marble.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
+  filter: blur(2px);
+  height: 100%;
+  width: 100%;
+}
+.checkout-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.checkout-form {
+  background-color: whitesmoke;
+  position: fixed;
+  width: 90%;
+  height: 100vh;
+  font-size: 1em;
+  left: 5.25%;
+  overflow: auto;
+}
+.checkout-form input {
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-color: white;
+  letter-spacing: 2px;
+  font-size: 0.89em;
+  color: black;
+  font-weight: 700;
+}
+::placeholder {
+  color: black;
+  font-size: 1em;
+  font-weight: 700;
+}
+.navbar {
+  padding: 0 13%;
+  transition-duration: 100ms;
+  box-shadow: 0 5px 10px rgba(128, 128, 128, 0.1);
+  margin-bottom: 2%;
+}
+.navbar:hover {
+  background-color: #f8efd6;
+}
+@media screen and (max-width: 1100px) {
+  .navbar:hover {
+    background-color: whitesmoke;
+  }
+  .navbar:active {
+    background-color: #f8efd6;
+  }
+}
+.checkout-step {
+  font-size: 2.4em;
+  display: flex;
+  justify-content: center;
+  padding: 0.6em 0;
+  font-weight: bold;
+  text-shadow: 2.5px 3px #c3c7c7;
+  letter-spacing: 5px;
+}
+.contact-info {
+  font-size: 1.75em;
+  padding: 1em 0 1.25em 1em;
+  flex: 1;
+}
+.contact-info-sec {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3em;
+}
+.checkout-email {
+  margin: 2.2em 0 0.4em 0;
+  padding: 1em;
+  font-size: 0.75em;
+  width: 50%;
+}
+.checkbox-column {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 3;
+  padding-left: 3em;
+}
+.updates-checkbox {
+  align-self: center;
+}
+.checkbox-row {
+  display: flex;
+  justify-content: left;
+  margin-left: 0.5em;
+  gap: 15px;
+}
+.checkbox-row label {
+  font-size: 1em;
+}
+.shipping-address {
+  font-size: 1.75em;
+  padding-left: 1em;
+  display: inline-block;
+  flex: 1;
+}
+.shipping-address-row {
+  display: flex;
+}
+.shipping-address-column {
+  display: flex;
+  flex-direction: column;
+  padding-left: 3em;
+  flex: 3;
+}
+.shipping-address-column input {
+  padding: 1em;
+  margin-bottom: 1.5em;
+}
+.lastName-validate .name,
+.name,
+.city,
+.state {
+  width: 35%;
+  margin-right: 5em;
+}
+.last-name {
+  margin-right: 0;
+}
+.address1,
+.address2,
+.optional-input {
+  width: 88.5%;
+}
+.postcode {
+  width: 35%;
+  margin-right: 5em;
+}
+#country {
+  width: 35%;
+  padding: 1em;
+}
+.phone-number {
+  width: 35%;
+  margin-bottom: 0;
+}
+input.phone-number {
+  margin-bottom: 0;
+}
+.buttons {
+  display: flex;
+  font-size: 1em;
+  padding: 5% 14% 3% 0;
+}
+.continue-button {
+  border-radius: 5px;
+  padding: 0.7em;
+  font-size: 1em;
+  background-color: black;
+  color: #f8efd6;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+.continue-button:hover {
+  color: black;
+  background-color: #f8efd6;
+}
+a.return-button {
+  text-decoration: none;
+  padding-left: 1em;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: black;
+  align-self: center;
+}
+a.return-button:hover {
+  color: lightsalmon;
+}
+select#country {
+  border-radius: 5px;
+  border: none;
+  color: black;
+  font-size: 0.85em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background-color: white;
+}
+select#country option {
+  color: black;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+input.success {
+  border-color: #2ecc71;
+}
+input.error {
+  border-color: #e74c3c;
+}
+input:focus {
+  outline: transparent 2px solid;
+}
+@media screen and (max-width: 1100px) {
+  .bg-img {
+    display: none;
+  }
+  .checkout-form {
+    width: 100%;
+    left: 0;
+  }
+}
+@media screen and (max-width: 890px) {
+  .checkout-form {
+    overflow-x: hidden;
+  }
+  .contact-info-sec {
+    flex-direction: column;
+  }
+  .shipping-address-row {
+    flex-direction: column;
+  }
+  .shipping-address {
+    padding-bottom: 1.25em;
+  }
+  .checkout-email {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 680px) {
+  .shipping-names {
+    display: flex;
+    flex-direction: column;
+  }
+  .shipping-names input {
+    width: 88.5%;
+  }
+  .postcode-country {
+    display: flex;
+    flex-direction: column;
+  }
+  input.checkout-email {
+    width: 100%;
+    margin-top: 0;
+  }
+  .contact-info {
+    display: inline-block;
+  }
+  input.postcode {
+    width: 88.5%;
+  }
+  select#country {
+    width: 88.5%;
+    margin-bottom: 1.5em;
+  }
+  input.city {
+    width: 88.5%;
+  }
+  input.state {
+    width: 88.5%;
+  }
+  input.phone-number {
+    width: 88.5%;
+  }
+  .buttons {
+    justify-content: center;
+    padding: 7% 14% 7% 0;
+  }
+  .checkbox-column {
+    padding-right: 3em;
+  }
+}
+@media screen and (max-width: 574px) {
+  .checkout-step {
+    font-size: 2.15em;
+  }
+}
+@media screen and (max-width: 533px) {
+  form.checkout-form {
+    font-size: 0.9em;
+  }
+  .buttons {
+    font-size: 1em;
+  }
+  select#country {
+    font-size: 0.9em;
+  }
+  .checkout-step {
+    text-align: center;
+  }
+  .checkbox-row label {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 423px) {
+  .buttons {
+    padding-right: 10%;
+    font-size: 0.85em;
+  }
+}
+@media screen and (min-height: 1024px) {
+  .checkout-form {
+    font-size: 1.3em;
+  }
+  .contact-info {
+    padding-bottom: 0.75em;
+    padding-top: 0.2em;
+  }
+  .shipping-address {
+    padding-bottom: 0.75em;
+  }
+  .buttons {
+    font-size: 0.8em;
+  }
+  select#country {
+    font-size: 0.7em;
+  }
+}
+@media screen and (min-height: 1366px) {
+  .checkout-form {
+    font-size: 2em;
+  }
+  .checkbox-column {
+    padding-left: 5%;
+    font-size: 0.75em;
+    padding-top: 1.5%;
+  }
+  .contact-info-sec {
+    padding-top: 1.5em;
+  }
+  .contact-info {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  input.checkout-email {
+    margin-top: 0;
+    padding: 1em;
+    width: 80%;
+    font-size: 1em;
+  }
+  .shipping-address-column {
+    padding-left: 5%;
+    padding-top: 0.5em;
+  }
+  .shipping-address-column input {
+    font-size: 0.68em;
+    padding: 1.05em;
+    margin-top: 0.1em;
+  }
+  .postcode-country {
+    display: flex;
+  }
+  select#country {
+    margin: 0.1em 5em 1.45em 0;
+  }
+  .city-state {
+    display: flex;
+  }
+  .buttons {
+    padding-top: 3%;
+    font-size: 0.6em;
+  }
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <!-- Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap">
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="checkoutPage2.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>Checkout-Payment</title>
+</head>
+
+<body>
+    <!-- Live Chat -->
+    <button id="popUpLiveChat" onclick="document.querySelector('.chat-wrapper').style.display = 'block'">
+        <i class="far fa-comment"></i>
+        <span id="chat-warning">1</span>
+    </button>
+
+    <div class="chat-wrapper">
+        <div class="chat-heading">
+            <span id="online-status"></span>
+            <img id="customer-service-pic" src="images/customerService.jpeg" alt="customer service" width="40px">
+            <span>Customer Service<br>[Johnny Sins]</span>
+            <button id="minimize-chat" class="fas fa-minus"
+                onclick="document.querySelector('.chat-wrapper').style.display = 'none'; document.getElementById('chat-warning').style.display = 'none'"></button>
+        </div>
+        <div class="chat-contents">
+            <div class="message-container non-user">
+                <p id="time-now">15:08</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="images/customerService.jpeg" alt="customer service"
+                        width="25px">
+                    <p>Hello! This is customer service. How can we help you?</p>
+                    <span id="read-status">Read at 15:08</span>
+                </div>
+            </div>
+            <div class="message-container user">
+                <p id="time-now">15:09</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="images/person1.jpg" alt="user pic" width="25px">
+                    <p>Does your shop opens daily?</p>
+                    <span id="read-status">Read at 15:11</span>
+                </div>
+            </div>
+            <div class="message-container non-user">
+                <p id="time-now">15:59</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="images/customerService.jpeg" alt="customer service"
+                        width="25px">
+                    <p>Good day to you! Our shop opens daily except for Sundays.</p>
+                    <span id="read-status">Read at 16:00</span>
+                </div>
+            </div>
+            <div class="message-container user">
+                <p id="time-now">16:00</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="images/person1.jpg" alt="user pic" width="25px">
+                    <p>What time till what time oh..?</p>
+                    <span id="read-status">Read at 16:01</span>
+                </div>
+            </div>
+            <div class="message-container non-user">
+                <p id="time-now">Now</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="images/customerService.jpeg" alt="customer service"
+                        width="25px">
+                    <p>You figure out yourself lah XD</p>
+                    <span id="read-status">Read at 16:02</span>
+                </div>
+            </div>
+            <div class="message-container" style="margin-left: 1ch;">
+                <p class="typing-status">Typing...</p>
+            </div>
+        </div>
+        <div class="message-input-section">
+            <div class="message-row">
+                <span id="message-input" contenteditable="plaintext-only" role="textbox"></span>
+                <button class="far fa-smile"></button>
+                <button class="far fa-paper-plane"
+                    onclick="document.getElementById('message-input').innerText = ''"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-img"></div>
+
+    <div class="checkout-wrapper">
+        <form class="checkout-form" id="paymentForm" action="account/Purchase.html">
+            <div class="navbar">
+                <div class="checkout-step">Checkout-Payment</div>
+            </div>
+            <div class="payment-content">
+                <div class="payment-body">
+                    <div class="payment-title">
+                        <h3>Payment</h3>
+                        <p>All transaction are secure and encrypted.</p>
+                    </div>
+                    <div class="payment-box">
+                        <div class="card-image">
+                            <label class="credit-card">Credit Card
+                                <input type="radio" id="cardChoice" name="radio" checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <div class="card-image-wrap">
+                                <img src="images/visa_logo.png" class="icn" height="20px">
+                                <img src="images/mastercard_logo.png" class="icn" height="20px">
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="card-details">
+                            <input type="text" onkeyup="checkout2Validation()" class="card-number" id="cardNum"
+                                placeholder="Card number (16 digit without space)" maxlength="16">
+                            <input type="text" onkeyup="checkout2Validation2()" class="card-name" id="cardName"
+                                placeholder="Name on card">
+                            <div class="card-info">
+                                <input type="text" onkeyup="checkout2Validation3()" class="expiration-date" id="exDate"
+                                    placeholder="Expiration date (MM/YY)">
+                                <input type="text" onkeyup="checkout2Validation4()" class="security-code"
+                                    id="securityCode" placeholder="Security code" maxlength="3">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="payment-box2">
+                        <div class="card-image">
+                            <label class="credit-card">Other Methods
+                                <input type="radio" id="otherChoice" name="radio">
+                                <span class="checkmark"></span>
+                            </label>
+                            <div class="card-image-wrap" style="gap: 5px;">
+                                <img src="images/maybank_logo.png" class="icn2" height="30px">
+                                <img src="images/grab_pay_logo.png" class="icn3" height="30px">
+                                <img src="images/TnG_logo.png" class="icn2" height="30px">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="promo-code">
+                        <div class="promo-text">Do you have a promo code?</div>
+                        <div class="promo-row">
+                            <input type="text" class="promo-input">
+                            <button type="button" class="promo-btn" onclick="applyDiscount()">Apply</button>
+                        </div>
+                        <div class="promo-status">
+                            <p id="promo-error">Not a Valid Promo Code!</p>
+                            <p id="promo-success"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cartSummary">
+                    <div class="summaryTitle">
+                        <h1>Summary</h1>
+                    </div>
+                    <div class="orderValue">
+                        <span class="summaryLabel">Subtotal</span>
+                        <span class="summaryPrices" id="subtotal"></span>
+                    </div>
+                    <div class="deliveryFee">
+                        <span class="summaryLabel">Delivery Fee</span>
+                        <span class="summaryPrices" id="deliveryFee"></span>
+                    </div>
+                    <div class="discountFee">
+                        <span class="summaryLabel">Discount</span>
+                        <span class="summaryPrices" id="discount"></span>
+                    </div>
+                    <div class="subtotal">
+                        <span class="summaryLabel">Total</span>
+                        <span class="summaryPrices" id="total"></span>
+                    </div>
+                    <div class="buttons2">
+                        <button class="complete-order">Complete
+                            Order</button>
+                        <a href="checkoutPage.html" type="submit" class="return-shipping">Return Back</a>
+                    </div>
+                </div>
+        </form>
+    </div>
+
+    <script src="checkoutPage2.js"></script>
+</body>
+
+</html>

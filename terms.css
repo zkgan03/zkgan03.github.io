@@ -1,0 +1,46 @@
+.tnc-wrapper {
+  background-color: rgba(211, 211, 211, 0.5);
+  box-shadow: 0px 0px 5px 5px lightgrey,
+    0px 0px 5px 5px rgba(211, 211, 211, 0.75),
+    0px 0px 5px 5px rgba(211, 211, 211, 0.5);
+  width: 75%;
+  margin: 3em auto;
+  text-align: justify;
+  padding: 1em 3em;
+  border-radius: 1em;
+  overflow-x: auto;
+}
+.tnc-wrapper :is(a:visited, a:link) {
+  color: rgb(0, 102, 255);
+}
+.tnc-wrapper :is(a:hover, a:active) {
+  color: rgb(0, 191, 255);
+  transition: all 100ms;
+}
+.tnc-wrapper h1 {
+  font-size: 2.5em;
+}
+.tnc-wrapper p {
+  margin: 1em 0;
+}
+.tnc-wrapper li {
+  list-style-position: inside;
+}
+.tnc-wrapper h2 {
+  margin-top: -1em;
+  margin-bottom: 1rem;
+  padding-top: 3em;
+}
+@media screen and (max-width: 1100px) {
+  .tnc-wrapper {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .tnc-wrapper {
+    font-size: 0.9rem;
+    width: 95%;
+    padding: 1em;
+    margin: 2em auto;
+  }
+}

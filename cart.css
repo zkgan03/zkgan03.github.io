@@ -1,0 +1,571 @@
+/*cart Wrapper style*/
+
+.cartWrapper {
+  margin: 20px;
+}
+
+/*title*/
+
+div.cartWrapper>span {
+  font-weight: bolder;
+  font-size: 2.5vw;
+  display: block;
+  text-align: center;
+  margin: 3vw;
+}
+
+/*cart table style*/
+
+table {
+  width: 60%;
+  float: left;
+}
+
+th, tr, td {
+  text-align: left;
+  padding: 1vw;
+  border-bottom: 1px solid rgba(138, 138, 138, 0.562);
+  border-collapse: collapse;
+}
+
+/*style for each row of item*/
+
+.cartItem {
+  font-size: 0.9vw;
+}
+
+/*label of cart*/
+
+.cartTitle {
+  text-decoration: underline;
+  font-size: 1vw;
+}
+
+/*item name*/
+
+.informationContainer {
+  width: 100%;
+  font-size: 1vw;
+}
+
+.cartName:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/*sizing of item*/
+
+.itemSize {
+  margin-top: 2vw;
+  display: inline-block;
+  border-radius: 50%;
+  width: 1.3vw;
+  height: 1.3vw;
+  text-align: center;
+  background-color: lightgray;
+  font-weight: bolder;
+}
+
+/*image of item*/
+
+.cartItem img {
+  width: 10vw;
+  height: auto;
+}
+
+/*price and total price of item*/
+
+.cartPrice, .rowTotalPrice {
+  font-weight: bolder;
+  font-size: 1.2vw;
+}
+
+/*quantity of item*/
+
+.itemQuantityContainer {
+  text-align: center !important;
+  width: 0;
+}
+
+.itemQuantityContainer input {
+  display: inline-block;
+  width: 3vw;
+  height: auto;
+  font-size: 0.7vw;
+  text-align: center !important;
+}
+
+/*remove button*/
+
+.removeBtnContainer {
+  vertical-align: top;
+}
+
+.removeItemBtn {
+  all: unset;
+}
+
+.removeItemBtn:hover, .cartImg:hover{
+  cursor: pointer;
+}
+
+/*total price of all item*/
+
+.totalPricesLabel {
+  width: 100%;
+  text-align: right;
+  font-weight: bolder;
+  font-size: 1.2vw;
+}
+
+.totalPrices {
+  width: 100%;
+  font-weight: bolder;
+  font-size: 1.2vw;
+}
+
+/*Summary*/
+
+.cartSummary {
+  margin-top: 100px;
+  width: 30%;
+  float: right;
+  font-size: 1vw;
+  background-color: #f8efd6;
+  display: block;
+  padding: 0.5vw;
+  margin: 0.5vw;
+}
+
+.cartSummary>div {
+  display: block;
+  padding: 1vw;
+}
+
+.summaryPrices {
+  float: right;
+  font-weight: bolder;
+}
+
+.subtotal {
+  border-top: 1px solid rgba(138, 138, 138, 0.562);
+}
+
+.checkout {
+  display: inline-block;
+  text-align: center;
+}
+
+.checkout button {
+  all: unset;
+  background-color: black;
+  color: white;
+  padding: 1vw;
+  box-shadow: 0.1vw 0.1vw 0.5vw rgb(141, 141, 141);
+  transition: 0.3s;
+}
+
+.checkout button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.61);
+  transition: 0.3s;
+}
+
+.checkout button:active {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.253);
+  transition: 0.1s;
+}
+
+.cartPaymentMethod {
+  margin-top: 5vw;
+  display: inline-block;
+  width: 100%;
+}
+
+.paymentImgBank Img {
+  height: 2.25vw;
+  margin: 0.5vw;
+}
+
+/*view for phone and smaller devices*/
+
+@media screen and (max-width: 1100px) {
+  table {
+    display: block;
+    width: 100%;
+    float: unset;
+  }
+  .cartTitle {
+    font-size: 2vw;
+  }
+  /*img*/
+  .cartItem img {
+    width: 15vw;
+    height: auto;
+  }
+  /*name and info*/
+  .informationContainer {
+    width: auto;
+    font-size: 2vw;
+  }
+  /*size*/
+  .itemSize {
+    width: 3vw;
+    height: 3vw;
+  }
+  /*cart price*/
+  .cartPrice, .rowTotalPrice {
+    font-size: 2vw;
+  }
+  /*qty*/
+  .itemQuantityContainer input {
+    display: inline-block;
+    width: 6vw;
+    height: 2.5vw;
+    font-size: 1.7vw;
+    text-align: center !important;
+  }
+  /*total price*/
+  .totalPrices, .totalPricesLabel {
+    font-size: 2vw;
+  }
+  /*remove btn*/
+  .removeItemBtn {
+    font-size: 2.5vw;
+  }
+  /*cart summary*/
+  .cartSummary {
+    display: block;
+    width: 60%;
+    font-size: 2vw;
+    float: unset;
+    margin: 2vw auto;
+  }
+  .cartPaymentMethod {
+    margin-top: 2vw;
+  }
+  .paymentImgBank Img {
+    height: 5vw;
+    margin: 1vw;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  /*title style*/
+  div.cartWrapper>span {
+    font-size: 3.5vw;
+  }
+  /*label of cart*/
+  .cartTitle, .rowTotalPrice {
+    display: none;
+  }
+  /*table of cart style*/
+  table {
+    display: inline-block;
+  }
+  tr, td, th {
+    display: inline-block;
+    text-align: center;
+    border: none;
+  }
+  tr {
+    width: 100%;
+  }
+  /*for each row of item*/
+  .cartItem {
+    border-bottom: 1px solid rgba(138, 138, 138, 0.562);
+  }
+  /*img style*/
+  .imgContainer {
+    float: left;
+    width: 30%;
+    height: auto;
+  }
+  .imgContainer img {
+    width: 100%;
+    height: auto;
+  }
+  /*item name and size*/
+  .informationContainer {
+    position: absolute;
+    text-align: left;
+    transform: translate(-85%, 0);
+    font-size: 3vw;
+  }
+  .cartName {
+    width: 150%;
+  }
+  .itemSize {
+    width: 4vw;
+    height: 4vw;
+  }
+
+  /*each item price*/
+  
+  .cartPrice {
+    position: absolute;
+    font-size: 3.5vw;
+    transform: translate(-175%, 300%);
+  }
+
+  /*item quantity*/
+
+  .itemQuantityContainer {
+    position: absolute;
+    transform: translate(0px, 368%);
+  }
+  .itemQuantityContainer input {
+    width: 6vw;
+    height: 3vw;
+    font-size: 2vw;
+  }
+
+  /*remove button*/
+
+  .removeItemBtn {
+    font-size: 5vw;
+    height: auto;
+    position: absolute;
+    transform: translate(500%, 200%);
+  }
+
+  /*total price for all item*/
+
+  tfoot {
+    position: relative;
+    height: 70px;
+    border-bottom: 1px solid black;
+  }
+  .totalPricesLabel {
+    width: 50%;
+    font-size: 4vw;
+    position: absolute;
+    text-align: left;
+    transform: translate(-80%, 0%);
+  }
+  .totalPrices {
+    font-size: 4vw;
+    width: 30%;
+    position: absolute;
+    text-align: left;
+    transform: translate(70%, 0%);
+  }
+  .cartSummary {
+    width: 100%;
+    font-size: 4vw;
+  }
+  .cartPaymentMethod {
+    margin-top: 5vw;
+  }
+  .paymentImgBank Img {
+    height: 7vw;
+    margin: 3vw;
+  }
+}
+
+/* The Game */
+
+.game-toggler {
+  position: fixed;
+  font-weight: bold;
+  width: 100px;
+  z-index: 98;
+  background-color: black;
+  border: 1px solid black;
+  color: whitesmoke;
+  padding: 0.5rem;
+  border-radius: 0 15px 15px 0;
+  bottom: 15%;
+  cursor: pointer;
+  transform: translateX(-25%);
+  user-select: none;
+  transition: all 0.3s;
+}
+
+.game-toggler:hover {
+  transform: translateX(0%);
+  color: black;
+  background-color: whitesmoke;
+  border: 1px solid black;
+}
+
+.game-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  gap: 1rem;
+  visibility: hidden;
+}
+
+.close-game {
+  user-select: none;
+  cursor: pointer;
+  border: 1px solid black;
+  font-size: 1.25rem;
+  width: 100px;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.close-game::after {
+  display: none;
+  content: "x";
+  font-size: 2rem;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: flies 0.25s;
+}
+
+.close-game:hover {
+  background-color: black;
+  color: whitesmoke;
+  transition: all 0.25s;
+  transform: scale(0.95);
+}
+
+.close-game:hover::after {
+  display: block;
+}
+
+.game-title {
+  text-align: center;
+  width: 95%;
+  font-size: 1.1rem;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.game img {
+  min-width: 300px;
+  max-width: 40vw;
+  object-fit: contain;
+}
+
+.game-success {
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: whitesmoke;
+  color: black;
+  max-width: 90vw;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  display: none;
+  animation: popUp 0.5s;
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.game-success> :first-child {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.game-success :nth-child(3) {
+  margin: 0.5rem 0;
+}
+
+.game-success div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5px;
+}
+
+.game-success div:last-of-type {
+  margin-bottom: 0;
+}
+
+.game-success div input {
+  text-align: center;
+  padding: 0.5em;
+  border-radius: 7.5px;
+}
+
+.game-success div button {
+  user-select: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  padding: 0.25em;
+  border-radius: 5px;
+  position: relative;
+}
+
+.game-success div button:hover {
+  background-color: black;
+  color: whitesmoke;
+}
+
+.game-success div button:active {
+  transform: scale(0.95);
+}
+
+#copy-success {
+  position: absolute;
+  top: -20%;
+  color: whitesmoke;
+  background-color: black;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  animation: copyStatus 0.25s;
+  opacity: 0;
+  display: none;
+  transition: all 0.25s;
+  pointer-events: none;
+}
+
+.game-lose {
+  font-size: 2rem;
+  position: absolute;
+  background-color: black;
+  padding: 1em 2em;
+  border-radius: 15px;
+  transition: all 0.25s;
+  animation: copyStatus 0.25s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes copyStatus {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* End of The Game */

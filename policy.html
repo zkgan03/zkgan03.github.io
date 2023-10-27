@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <!-- Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap">
+    <link rel="stylesheet" href="overall_layout.css">
+    <link rel="stylesheet" href="policy.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>Privacy Policy | OutModern</title>
+</head>
+
+<body>
+    <!-- Loading Animation -->
+    <div class="loading-wrapper">
+        <div class="loading">
+            <img src="images/loading.gif" alt="Logo_loading">
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="scroll-top">
+        <a href="javascript:void(0)" onclick="backToTop()" title="Back to top"><i
+                class="fas fa-chevron-circle-up"></i></a>
+    </div>
+
+    <!-- Background Image -->
+    <div class="bg-img"></div>
+
+    <!-- Pop Up Search -->
+    <div id="search_popup">
+        <div class="search_form_div">
+            <form id="search_form" action="search.html">
+                <div class="search_form_row1">
+                    <input class="search_box" type="search" placeholder="Search for our products..." name="search"
+                        required>
+                    <button class="search_popup_button" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="search_form_row2">
+                    <button type="button" class="cancel-search" onclick="closeSearch()"
+                        onmouseover="this.innerText = ''" onmouseleave="this.innerText = 'CANCEL'">CANCEL</button>
+                    <button type="submit" class="submit-search" onmouseover="this.innerText = ''"
+                        onmouseleave="this.innerText = 'SEARCH'">SEARCH</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Pop Up Login -->
+    <div class="pop-up-login-wrapper">
+        <div class="pop-up-login-wrapper2" onclick="closePopUpLogin()"></div>
+        <div class="pop-up-login-container">
+            <div class="picture">
+                <!-- Image from https://unsplash.com/photos/QZGQO3NvsLo -->
+                <img src="images/formbackground.jpg" alt="pic">
+            </div>
+            <form class="my-form" action="#">
+                <div class="title">Sign In</div>
+                <div class="input-field">
+                    <input class="form-input" type="text" name="username_email_input" required>
+
+                    <label class="form-label">E-mail / Username</label>
+                </div>
+                <div class="input-field">
+                    <input class="form-input password-input" type="password" name="password" required>
+                    <span>
+                        <a href="javascript:void(0)" onclick="togglePw()"><i id="show_pw" class="far fa-eye"></i></a>
+                        <a id="show_pw" href="javascript:void(0)" onclick="togglePw()"><i id="hide_pw"
+                                class="far fa-eye-slash"></i></a>
+                    </span>
+                    <label class="form-label" class="password">Password</label>
+                </div>
+                <div class="forgot">
+                    <a href="resetPassword.html">Forgot Password</a>
+                </div>
+                <div style="text-align: left; margin-top: 15px;">
+                    <input type="checkbox" id="remember-me" value="Remember Me" style="text-align: left;">
+                    <label for="remember-me">Remember Me</label>
+                </div>
+                <input type="submit" class="button" value="Login">
+                <p class="member-link">Not a member? <a class="create-an-acc" href="signUp.html">Create an account</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Live Chat -->
+    <button id="popUpLiveChat" onclick="document.querySelector('.chat-wrapper').style.display = 'block'">
+        <i class="far fa-comment"></i>
+        <span id="chat-warning">1</span>
+    </button>
+
+    <div class="chat-wrapper">
+        <div class="chat-heading">
+            <span id="online-status"></span>
+            <img id="customer-service-pic" src="images/customerService.jpeg" alt="customer service" width="40px">
+            <span>Customer Service<br>[Johnny Sins]</span>
+            <button id="minimize-chat" class="fas fa-minus"
+                onclick="document.querySelector('.chat-wrapper').style.display = 'none'; document.getElementById('chat-warning').style.display = 'none'"></button>
+        </div>
+        <div class="chat-contents">
+            <div class="message-container non-user">
+                <p id="time-now">15:08</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="images/customerService.jpeg" alt="customer service"
+                        width="25px">
+                    <p>Hello! This is customer service. How can we help you?</p>
+                    <span id="read-status">Read at 15:08</span>
+                </div>
+            </div>
+            <div class="message-container user">
+                <p id="time-now">15:09</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="images/person1.jpg" alt="user pic" width="25px">
+                    <p>Does your shop opens daily?</p>
+                    <span id="read-status">Read at 15:11</span>
+                </div>
+            </div>
+            <div class="message-container non-user">
+                <p id="time-now">15:59</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="images/customerService.jpeg" alt="customer service"
+                        width="25px">
+                    <p>Good day to you! Our shop opens daily except for Sundays.</p>
+                    <span id="read-status">Read at 16:00</span>
+                </div>
+            </div>
+            <div class="message-container user">
+                <p id="time-now">16:00</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="images/person1.jpg" alt="user pic" width="25px">
+                    <p>What time till what time oh..?</p>
+                    <span id="read-status">Read at 16:01</span>
+                </div>
+            </div>
+            <div class="message-container non-user">
+                <p id="time-now">Now</p>
+                <div class="messages">
+                    <img id="customer-service-pic" src="images/customerService.jpeg" alt="customer service"
+                        width="25px">
+                    <p>You figure out yourself lah XD</p>
+                    <span id="read-status">Read at 16:02</span>
+                </div>
+            </div>
+            <div class="message-container" style="margin-left: 1ch;">
+                <p class="typing-status">Typing...</p>
+            </div>
+        </div>
+        <div class="message-input-section">
+            <div class="message-row">
+                <span id="message-input" contenteditable="plaintext-only" role="textbox"></span>
+                <button class="far fa-smile"></button>
+                <button class="far fa-paper-plane"
+                    onclick="document.getElementById('message-input').innerText = ''"></button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Wrapper of whole webpage -->
+    <div class="wrapper">
+        <!-- Promo message header -->
+        <div class="promo_msg" id="promo_msg">
+            <p>Buy over RM100 to get free shipping now</p>
+        </div>
+
+        <div id="sidebar-modal" onclick="closeNav()"></div>
+
+        <!-- Navigation bar -->
+        <header>
+            <div class="navbar" id="navbar">
+                <div class="mobile_search_bar_wrapper" id="mobile_search_bar_wrapper">
+                    <div class="mobile_search_bar" id="mobile_search_bar">
+                        <a href="javascript:void(0)"><i class="fas fa-search"></i></a>
+                        <form id="mobile-search-form" action="search.html">
+                            <input id="mobile-search-input" type="search" placeholder="Search Our Products"
+                                name="search" required>
+                        </form>
+                        <a href="javascript:void(0)" class="close_mobile_search_bar"
+                            onclick="closeMobileSearch()">&times;</a>
+                    </div>
+                </div>
+                <ul class="ul0" id="ul0">
+                    <div class="ul0_div1">
+                        <li>
+                            <a class="menu_bar" onclick="openNav()"><i id="ul0_div1_icon1" class="fas fa-bars"></i></a>
+                        </li>
+                        <li>
+                            <a href="index.html"><img id="logo0" src="images/logo2.png" alt="Logo"></a>
+                        </li>
+                    </div>
+                    <div class="ul0_div2">
+                        <li>
+                            <a href="javascript:void(0)"><i id="ul0_div2_icon1" class="fas fa-search"
+                                    onclick="openMobileSearch()"></i></a>
+                        </li>
+                        <li>
+                            <a href="cart.html" title="View my Cart">
+                                <i id="ul0_div2_icon2" class="far fa-shopping-cart"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <span class="cartItemQuantity"
+                                style="margin-left: 3px; background-color: #84beb5; color: whitesmoke; border-radius: 25px; padding: 0 10px;"></span>
+                        </li>
+                    </div>
+                </ul>
+                <div class="logo">
+                    <a href="index.html"><img id="logo" src="images/logo2.png" alt="Logo"></a>
+                </div>
+                <nav>
+                    <ul class="ul1" id="ul1">
+                        <li><a class="ul1_anchor ul1_home" href="index.html">Home</a></li>
+                        <li><a class="ul1_anchor ul1_about" href="aboutUs.html">About Us</a></li>
+                        <li class="categories" id="categories"
+                            onmouseover="document.getElementById('expander').className = 'fas fa-angle-up'"
+                            onmouseout="document.getElementById('expander').className = 'fas fa-angle-down'">
+                            <a class="ul1_anchor" href="javascript:void(0)"
+                                style="display: flex; align-items: center;">Categories&nbsp;<i <i
+                                    class="fas fa-angle-down" id="expander"></i></a>
+                            <div class="categories_menu" id="categories_menu">
+                                <div class="categories_list">
+                                    <dl><a href="CategoriesProduct/hoodies.html">Hoodies</a></dl>
+                                    <dl><a href="CategoriesProduct/teeShirt.html">Tee Shirts</a></dl>
+                                    <dl><a href="CategoriesProduct/sweaters.html">Sweaters</a></dl>
+                                    <dl><a href="CategoriesProduct/shortsAndPants.html">Shorts and Pants</a></dl>
+                                    <dl><a href="CategoriesProduct/trouser.html">Trousers</a></dl>
+                                    <dl><a href="CategoriesProduct/accessories.html">Accessories</a></dl>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="account"
+                            onmouseover="document.getElementById('expander2').className = 'fas fa-angle-up'"
+                            onmouseout="document.getElementById('expander2').className = 'fas fa-angle-down'">
+                            <a class="ul1_anchor" href="javascript:void(0)" style="display: flex; align-items: center;">
+                                <i class="far fa-user"></i>
+                                &nbsp;
+                                <i class="fas fa-angle-down" id="expander2"></i>
+                            </a>
+                            <div class="account_menu" id="account_menu">
+                                <div class="account_menu_list" id="account_menu_list">
+                                    <dd><a href="account/View_Profile.html">My account</a></dd>
+                                    <dd><a href="account/Purchase.html">My orders</a></dd>
+                                    <dd><a href="account/manageEmail.html">Manage Subscription</a></dd>
+                                    <dd><a href="javascript:void(0)" onclick="closeNavSignIn()">Sign In</a></dd>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="search_button">
+                            <a class="ul1_anchor" title="Search" href="javascript:void(0)" onclick="displaySearch()"><i
+                                    class="fas fa-search"></i></a>
+                        </li>
+                        <li>
+                            <a class="ul1_anchor" href="cart.html" title="View my Cart">
+                                <i class="far fa-shopping-cart"></i>
+                            </a>
+                            <span class="cartItemQuantity"
+                                style="margin-left: 3px; background-color: #84beb5; color: whitesmoke; border-radius: 25px; padding: 0 10px;"></span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+
+
+            <!-- Mobile Expandable Nav Bar -->
+            <div class="ul2_div" id="ul2_div">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <ul class="ul2" id="ul2">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li>
+                        <a id="categories_anchor" href="javascript:void(0)" onclick="openCategories()">Categories</a>
+                        <button id="open" onclick="openCategories()">&plus;</button>
+                        <button id="close" onclick="closeCategories()">&minus;</button>
+                    </li>
+                    <div class="mobile_categories" id="mobile_categories">
+                        <ul>
+                            <li class="mobile_c_1">
+                                <span><a href="CategoriesProduct/hoodies.html">Hoodies</a></span>
+                                <span><a href="CategoriesProduct/teeShirt.html">Tee Shirts</a></span>
+                                <span><a href="CategoriesProduct/sweaters.html">Sweaters</a></span>
+                                <span><a href="CategoriesProduct/shortsAndPants.html">Shorts and Pants</a></span>
+                                <span><a href="CategoriesProduct/trouser.html">Trousers</a></span>
+                                <span><a href="CategoriesProduct/accessories.html">Accessories</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <li id="account_anchor_li">
+                        <a id="account_anchor" href="javascript:void(0)" onclick="openAccounts()">Account</a>
+                        <button id="open2" onclick="openAccounts()">&plus;</button>
+                        <button id="close2" onclick="closeAccounts()">&minus;</button>
+                    </li>
+                    <div class="mobile_account">
+                        <ul>
+                            <li class="mobile_a_1">
+                                <span><a href="account/View_Profile.html">My Account</a></span>
+                            </li>
+                            <li class="mobile_a_1">
+                                <span><a href="account/Purchase.html">My Orders</a></span>
+                            </li>
+                            <li class="mobile_a_1">
+                                <span><a href="account/manageEmail.html">Manage Subscription</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <li>
+                        <a href="javascript:void(0)" onclick="closeNavSignIn()">Sign In</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+
+        <!-- Privacy Policy -->
+        <div class="policy-wrapper">
+            <div class="privacy-content-head">
+                <h1>PRIVACY NOTICE</h1>
+                <h3><i>Last updated July 30, 2021</i></h3>
+                <p>
+                    Thank you for choosing to be part of our community at OutModern ("<b>Company</b>", "<b>we</b>",
+                    "<b>us</b>", "<b>our</b>"). We are committed to protecting your personal information and your right
+                    to privacy. If you have any questions or concerns about this privacy notice, or our practices with
+                    regards to your personal information, please contact us at <a
+                        href="mailto:ziyanyapzyy@gmail.com">ziyanyapzyy@gmail.com</a>.
+                </p>
+                <p>
+                    When you visit our website <a
+                        href="https://outlan7modern.ziyanyap.repl.co">https://outlan7modern.ziyanyap.repl.co</a>
+                    (the "<b>Website</b>"), and more generally, use any of our services (the "<b>Services</b>", which
+                    include the Website), we appreciate that you are trusting us with your personal information. We take
+                    your privacy very seriously. In this privacy notice, we seek to explain to you in the clearest way
+                    possible what information we collect, how we use it and what rights you have in relation to it. We
+                    hope you take some time to read through it carefully, as it is important. If there are any terms in
+                    this privacy notice that you do not agree with, please discontinue use of our Services immediately.
+                </p>
+                <p>
+                    This privacy notice applies to all information collected through our Services (which, as described
+                    above, includes our Website), as well as, any related services, sales, marketing or events.
+                </p>
+                <p>
+                    <b>Please read this privacy notice carefully as it will help you understand what we do with the
+                        information that we collect.</b>
+                </p>
+                <h2>TABLE OF CONTENTS</h2>
+                <ol>
+                    <li><a href="#privacy-content1">WHAT INFORMATION DO WE COLLECT?</a></li>
+                    <li><a href="#privacy-content2">HOW DO WE USE YOUR INFORMATION?</a></li>
+                    <li><a href="#privacy-content3">WILL YOUR INFORMATION BE SHARED WITH ANYONE?</a></li>
+                    <li><a href="#privacy-content4">HOW DO WE HANDLE YOUR SOCIAL LOGINS?</a></li>
+                    <li><a href="#privacy-content5">HOW LONG DO WE KEEP YOUR INFORMATION?</a></li>
+                    <li><a href="#privacy-content6">HOW DO WE KEEP YOUR INFORMATION SAFE?</a></li>
+                    <li><a href="#privacy-content7">WHAT ARE YOUR PRIVACY RIGHTS?</a></li>
+                    <li><a href="#privacy-content8">CONTROLS FOR DO-NOT-TRACK FEATURES</a></li>
+                    <li><a href="#privacy-content9">DO WE MAKE UPDATES TO THIS NOTICE?</a></li>
+                    <li><a href="#privacy-content10">HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</a></li>
+                    <li><a href="#privacy-content11">HOW CAN YOU REVIEW, UPDATE OR DELETE THE DATA WE COLLECT FROM
+                            YOU?</a></li>
+                </ol>
+            </div>
+            <div class="privacy-content">
+                <ol>
+                    <!-- 1ST -->
+                    <h2 id="privacy-content1">
+                        <li>WHAT INFORMATION DO WE COLLECT?</li>
+                    </h2>
+                    <p>
+                        <b>Personal information you disclose to us</b>
+                    </p>
+                    <p>
+                        <i><b>In Short:</b> We collect personal information that you provide to us.</i>
+                    </p>
+                    <p>
+                        We collect personal information that you voluntarily provide to us when you register on the
+                        Website, express an interest in obtaining information about us or our products and Services,
+                        when you participate in activities on the Website or otherwise when you contact us.
+                    </p>
+                    <p>
+                        The personal information that we collect depends on the context of your interactions with us and
+                        the Website, the choices you make and the products and features you use. The personal
+                        information we collect may include the following:
+                    </p>
+                    <p>
+                        <b>Personal Information Provided by You.</b> We collect names; phone numbers; email addresses;
+                        mailing addresses; usernames; passwords; billing addresses; debit/credit card numbers; contact
+                        preferences; delivery addresses; and other similar information.
+                    </p>
+                    <p>
+                        <b>Payment Data.</b> We may collect data necessary to process your payment if you make
+                        purchases, such as your payment instrument number (such as a credit card number), and the
+                        security code associated with your payment instrument. All payment data is stored by OutModern.
+                        You may find their privacy notice link(s) here: <a
+                            href="https://outlan7modern.ziyanyap.repl.co">https://outlan7modern.ziyanyap.repl.co</a>.
+                    </p>
+                    <p>
+                        <b>Social Media Login Data.</b> We may provide you with the option to register with us using
+                        your existing social media account details, like your Facebook, Twitter or other social media
+                        account. If you choose to register in this way, we will collect the information described in the
+                        section called <a href="#privacy-content4">"HOW DO WE HANDLE YOUR SOCIAL LOGINS?"</a> below.
+                    </p>
+                    <p>
+                        All personal information that you provide to us must be true, complete and accurate, and you
+                        must notify us of any changes to such personal information.
+                    </p>
+                    <p>
+                        <b>Information collected from other sources</b>
+                    </p>
+                    <p>
+                        <i><b>In Short:</b> We may collect limited data from public databases, marketing partners,
+                            social media platforms, and other outside sources.</i>
+                    </p>
+                    <p>
+                        In order to enhance our ability to provide relevant marketing, offers and services to you and
+                        update our records, we may obtain information about you from other sources, such as public
+                        databases, joint marketing partners, affiliate programs, data providers, social media platforms,
+                        as well as from other third parties. This information includes mailing addresses, job titles,
+                        email addresses, phone numbers, intent data (or user behavior data), Internet Protocol (IP)
+                        addresses, social media profiles, social media URLs and custom profiles, for purposes of
+                        targeted advertising and event promotion. If you interact with us on a social media platform
+                        using your social media account (e.g. Facebook or Twitter), we receive personal information
+                        about you such as your name, email address, and gender. Any personal information that we collect
+                        from your social media account depends on your social media account's privacy settings.
+                    </p>
+
+                    <!-- 2ND -->
+                    <h2 id="privacy-content2">
+                        <li>HOW DO WE USE YOUR INFORMATION?</li>
+                    </h2>
+                    <p>
+                        <i><b>In Short:</b> We process your information for purposes based on legitimate business
+                            interests, the fulfillment of our contract with you, compliance with our legal obligations,
+                            and/or your consent.</i>
+                    </p>
+                    <p>
+                        We use personal information collected via our Website for a variety of business purposes
+                        described below. We process your personal information for these purposes in reliance on our
+                        legitimate business interests, in order to enter into or perform a contract with you, with your
+                        consent, and/or for compliance with our legal obligations. We indicate the specific processing
+                        grounds we rely on next to each purpose listed below.
+                    </p>
+                    <p>
+                        We use the information we collect or receive:
+                    </p>
+                    <ul>
+                        <p>
+                            <li>
+                                <b>To facilitate account creation and logon process.</b> If you choose to link your
+                                account with us to a third-party account (such as your Google or Facebook account), we
+                                use the information you allowed us to collect from those third parties to facilitate
+                                account creation and logon process for the performance of the contract. See the section
+                                below headed "HOW DO WE HANDLE YOUR SOCIAL LOGINS?" for further information.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>To post testimonials.</b> We post testimonials on our Website that may contain
+                                personal information. Prior to posting a testimonial, we will obtain your consent to use
+                                your name and the content of the testimonial. If you wish to update, or delete your
+                                testimonial, please contact us at <a
+                                    href="mailto:ziyanyapzyy@gmail.com">ziyanyapzyy@gmail.com</a> and be sure to include
+                                your name, testimonial location, and contact information.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>Request feedback.</b> We may use your information to request feedback and to contact
+                                you about your use of our Website.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>To enable user-to-user communications.</b> We may use your information in order to
+                                enable user-to-user communications with each user's consent.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>To manage user accounts.</b> We may use your information for the purposes of managing
+                                our account and keeping it in working order.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>To send administrative information to you.</b> We may use your personal information
+                                to send you product, service and new feature information and/or information about
+                                changes to our terms, conditions, and policies.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>To protect our Services.</b> We may use your information as part of our efforts to
+                                keep our Website safe and secure (for example, for fraud monitoring and prevention).
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>To enforce our terms, conditions and policies for business purposes, to comply with
+                                    legal and regulatory requirements or in connection with our contract.</b>
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>To respond to legal requests and prevent harm.</b> If we receive a subpoena or other
+                                legal request, we may need to inspect the data we hold to determine how to respond.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>Fulfill and manage your orders.</b> We may use your information to fulfill and manage
+                                your orders, payments, returns, and exchanges made through the Website.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>Administer prize draws and competitions.</b> We may use your information to
+                                administer prize draws and competitions when you elect to participate in our
+                                competitions.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>To deliver and facilitate delivery of services to the user.</b> We may use your
+                                information to provide you with the requested service.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>To respond to user inquiries/offer support to users.</b> We may use your information
+                                to respond to your inquiries and solve any potential issues you might have with the use
+                                of our Services.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>To send you marketing and promotional communications.</b> We and/or our third-party
+                                marketing partners may use the personal information you send to us for our marketing
+                                purposes, if this is in accordance with your marketing preferences. For example, when
+                                expressing an interest in obtaining information about us or our Website, subscribing to
+                                marketing or otherwise contacting us, we will collect personal information from you. You
+                                can opt-out of our marketing emails at any time (see the <a
+                                    href="#privacy-content7">"WHAT ARE YOUR PRIVACY RIGHTS?"</a> below).
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>Deliver targeted advertising to you.</b> We may use your information to develop and
+                                display personalized content and advertising (and work with third parties who do so)
+                                tailored to your interests and/or location and to measure its effectiveness.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>For other business purposes.</b> We may use your information for other business
+                                purposes, such as data analysis, identifying usage trends, determining the effectiveness
+                                of our promotional campaigns and to evaluate and improve our Website, products,
+                                marketing and your experience. We may use and store this information in aggregated and
+                                anonymized form so that it is not associated with individual end users and does not
+                                include personal information. We will not use identifiable personal information without
+                                your consent.
+                            </li>
+                        </p>
+                    </ul>
+
+                    <!-- 3RD -->
+                    <h2 id="privacy-content3">
+                        <li>WILL YOUR INFORMATION BE SHARED WITH ANYONE?</li>
+                    </h2>
+                    <p>
+                        <i><b>In Short:</b> We only share information with your consent, to comply with laws, to provide
+                            you with services, to protect your rights, or to fulfill business obligations.</i>
+                    </p>
+                    <p>
+                        We may process or share your data that we hold based on the following legal basis:
+                    </p>
+                    <ul>
+                        <p>
+                            <li>
+                                <b>Consent:</b> We may process your data if you have given us specific consent to use
+                                your personal information for a specific purpose.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>Legitimate Interests:</b> We may process your data when it is reasonably necessary to
+                                achieve our legitimate business interests.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>Performance of a Contract:</b> Where we have entered into a contract with you, we may
+                                process your personal information to fulfill the terms of our contract.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>Legal Obligations:</b> We may disclose your information where we are legally required
+                                to do so in order to comply with applicable law, governmental requests, a judicial
+                                proceeding, court order, or legal process, such as in response to a court order or a
+                                subpoena (including in response to public authorities to meet national security or law
+                                enforcement requirements).
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>Vital Interests:</b> We may disclose your information where we believe it is
+                                necessary to investigate, prevent, or take action regarding potential violations of our
+                                policies, suspected fraud, situations involving potential threats to the safety of any
+                                person and illegal activities, or as evidence in litigation in which we are involved.
+                            </li>
+                        </p>
+                    </ul>
+                    <p>
+                        More specifically, we may need to process your data or share your personal information in the
+                        following situations:
+                    </p>
+                    <ul>
+                        <p>
+                            <li>
+                                <b>Business Transfers.</b> We may share or transfer your information in connection with,
+                                or during negotiations of, any merger, sale of company assets, financing, or acquisition
+                                of all or a portion of our business to another company.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>Business Partners.</b> We may share your information with our business partners to
+                                offer you certain products, services or promotions.
+                            </li>
+                        </p>
+                    </ul>
+
+                    <!-- 4TH -->
+                    <h2 id="privacy-content4">
+                        <li>HOW DO WE HANDLE YOUR SOCIAL LOGINS?</li>
+                    </h2>
+                    <p>
+                        <i><b>In Short:</b> If you choose to register or log in to our services using a social media
+                            account, we may have access to certain information about you.</i>
+                    </p>
+                    <p>
+                        Our Website offers you the ability to register and login using your third-party social media
+                        account details (like your Facebook or Twitter logins). Where you choose to do this, we will
+                        receive certain profile information about you from your social media provider. The profile
+                        information we receive may vary depending on the social media provider concerned, but will often
+                        include your name, email address, friends list, profile picture as well as other information you
+                        choose to make public on such social media platform.
+                    </p>
+                    <p>
+                        We will use the information we receive only for the purposes that are described in this privacy
+                        notice or that are otherwise made clear to you on the relevant Website. Please note that we do
+                        not control, and are not responsible for, other uses of your personal information by your
+                        third-party social media provider. We recommend that you review their privacy notice to
+                        understand how they collect, use and share your personal information, and how you can set your
+                        privacy preferences on their sites and apps.
+                    </p>
+
+                    <!-- 5TH -->
+                    <h2 id="privacy-content5">
+                        <li>HOW LONG DO WE KEEP YOUR INFORMATION?</li>
+                    </h2>
+                    <p>
+                        <i><b>In Short:</b> We keep your information for as long as necessary to fulfill the purposes
+                            outlined in this privacy notice unless otherwise required by law.</i>
+                    </p>
+                    <p>
+                        We will only keep your personal information for as long as it is necessary for the purposes set
+                        out in this privacy notice, unless a longer retention period is required or permitted by law
+                        (such as tax, accounting or other legal requirements). No purpose in this notice will require us
+                        keeping your personal information for longer than one (1) month past the termination of the
+                        user's account.
+                    </p>
+                    <p>
+                        When we have no ongoing legitimate business need to process your personal information, we will
+                        either delete or anonymize such information, or, if this is not possible (for example, because
+                        your personal information has been stored in backup archives), then we will securely store your
+                        personal information and isolate it from any further processing until deletion is possible.
+                    </p>
+
+                    <!-- 6TH -->
+                    <h2 id="privacy-content6">
+                        <li>HOW DO WE KEEP YOUR INFORMATION SAFE?</li>
+                    </h2>
+                    <p>
+                        <i><b>In Short:</b> We aim to protect your personal information through a system of
+                            organizational and technical security measures.</i>
+                    </p>
+                    <p>
+                        We have implemented appropriate technical and organizational security measures designed to
+                        protect the security of any personal information we process. However, despite our safeguards and
+                        efforts to secure your information, no electronic transmission over the Internet or information
+                        storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that
+                        hackers, cybercriminals, or other unauthorized third parties will not be able to defeat our
+                        security, and improperly collect, access, steal, or modify your information. Although we will do
+                        our best to protect your personal information, transmission of personal information to and from
+                        our Website is at your own risk. You should only access the Website within a secure environment.
+                    </p>
+
+                    <!-- 7TH -->
+                    <h2 id="privacy-content7">
+                        <li>WHAT ARE YOUR PRIVACY RIGHTS?</li>
+                    </h2>
+                    <p>
+                        <i><b>In Short:</b> You may review, change, or terminate your account at any time. If you are a
+                            resident in the EEA or UK and you believe we are unlawfully processing your personal
+                            information, you also have the right to complain to your local data protection supervisory
+                            authority. You can find their contact details here: <a
+                                href="http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm">http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm</a>.</i>
+                    </p>
+                    <p>
+                        If you are a resident in Switzerland, the contact details for the data protection authorities
+                        are available here: <a
+                            href="https://www.edoeb.admin.ch/edoeb/en/home.html">https://www.edoeb.admin.ch/edoeb/en/home.html</a>.
+                    </p>
+                    <p>
+                        If you have questions or comments about your privacy rights, you may email us at <a
+                            href="mailto:ziyanyapzyy@gmail.com">ziyanyapzyy@gmail.com</a>.
+                    </p>
+                    <p>
+                        <b>Account Information</b>
+                    </p>
+                    <p>
+                        If you would at any time like to review or change the information in your account or terminate
+                        your account, you can:
+                    </p>
+                    <ul>
+                        <p>
+                            <li>Log in to your account settings and update your user account.</li>
+                        </p>
+                    </ul>
+                    <p>
+                        Upon your request to terminate your account, we will deactivate or delete your account and
+                        information from our active databases. However, we may retain some information in our files to
+                        prevent fraud, troubleshoot problems, assist with any investigations, enforce our Terms of Use
+                        and/or comply with applicable legal requirements.
+                    </p>
+                    <p>
+                        <b>Opting out of email marketing:</b> You can unsubscribe from our marketing email list at any
+                        time by clicking on the unsubscribe link in the emails that we send or by contacting us using
+                        the details provided below. You will then be removed from the marketing email list — however, we
+                        may still communicate with you, for example to send you service-related emails that are
+                        necessary for the administration and use of your account, to respond to service requests, or for
+                        other non-marketing purposes. To otherwise opt-out, you may:
+                    </p>
+                    <ul>
+                        <p>
+                            <li>Access your account settings and update your preferences.</li>
+                        </p>
+                    </ul>
+
+                    <!-- 8TH -->
+                    <h2 id="privacy-content8">
+                        <li>CONTROLS FOR DO-NOT-TRACK FEATURES</li>
+                    </h2>
+                    <p>
+                        Most web browsers and some mobile operating systems and mobile applications include a
+                        Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not
+                        to have data about your online browsing activities monitored and collected. At this stage no
+                        uniform technology standard for recognizing and implementing DNT signals has been finalized. As
+                        such, we do not currently respond to DNT browser signals or any other mechanism that
+                        automatically communicates your choice not to be tracked online. If a standard for online
+                        tracking is adopted that we must follow in the future, we will inform you about that practice in
+                        a revised version of this privacy notice.
+                    </p>
+
+                    <!-- 9TH -->
+                    <h2 id="privacy-content9">
+                        <li>DO WE MAKE UPDATES TO THIS NOTICE?</li>
+                    </h2>
+                    <p>
+                        <i><b>In Short:</b> Yes, we will update this notice as necessary to stay compliant with relevant
+                            laws.</i>
+                    </p>
+                    <p>
+                        We may update this privacy notice from time to time. The updated version will be indicated by an
+                        updated "Revised" date and the updated version will be effective as soon as it is accessible. If
+                        we make material changes to this privacy notice, we may notify you either by prominently posting
+                        a notice of such changes or by directly sending you a notification. We encourage you to review
+                        this privacy notice frequently to be informed of how we are protecting your information.
+                    </p>
+
+                    <!-- 10TH -->
+                    <h2 id="privacy-content10">
+                        <li>HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</li>
+                    </h2>
+                    <p>
+                        If you have questions or comments about this notice, you may email us at <a
+                            href="mailto:ziyanyapzyy@gmail.com">ziyanyapzyy@gmail.com</a> or by post to:
+                    </p>
+                    <p>
+                        OutModern<br>
+                        30 3 01, Jln Radin Anum<br>
+                        Taman Seri Petaling<br>
+                        57000 Kuala Lumpur<br>
+                        Malaysia
+                    </p>
+
+                    <!-- 11TH -->
+                    <h2 id="privacy-content11">
+                        <li>HOW CAN YOU REVIEW, UPDATE OR DELETE THE DATA WE COLLECT FROM YOU?</li>
+                    </h2>
+                    <p>
+                        Based on the applicable laws of your country, you may have the right to request access to the
+                        personal information we collect from you, change that information, or delete it in some
+                        circumstances. To request to review, update, or delete your personal information, please visit:
+                        <a href="https://outlan7modern.ziyanyap.repl.co">https://outlan7modern.ziyanyap.repl.co</a>.
+                    </p>
+                </ol>
+            </div>
+        </div>
+
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer_wrapper">
+                <div class="footer_info footer_info1">
+                    <h2>LOCATIONS</h2>
+                    <div class="footer_desc1">
+                        <p><span>Main Outlet</span><br>30 3 01, Jln Radin Anum<br>Taman Seri Petaling<br>57000 Kuala
+                            Lumpur</p>
+                        <p><span>2nd Outlet</span><br>Unit 5.2, Level 5, Cp Tower 11<br>Section 16/11, Jalan
+                            Damansara<br>46350 Petaling Jaya, Selangor</p>
+                        <p><span>3rd Outlet</span><br>2, Jln Tampoi 7/1<br>Tampoi Industrial Park<br>81200 Johor Bahru,
+                            Johor</p>
+                    </div>
+                </div>
+                <div class="footer_wrapper2">
+                    <div class="footer_info footer_info2">
+                        <h2>CONTACT US</h2>
+                        <div class="contact_us">
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+60123136742">(+60)12 313 6742</a>
+                        </div>
+                        <div class="contact_us">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/601133944238" target="_blank">(+60)11 3394 4238</a>
+                        </div>
+                        <div class="contact_us">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:outmoderncare@gmail.com">outmoderncare@gmail.com</a>
+                        </div>
+                        <div class="contact_us">
+                            <i class="fas fa-envelope" style="visibility: hidden;"></i>
+                            <a href="mailto:ziyanyapzyy@gmail.com">ziyanyapzyy@gmail.com</a>
+                        </div>
+                        <div class="contact_us">
+                            <i class="far fa-comment-alt"></i>
+                            <a href="contactUs.html">Need Help?</a>
+                        </div>
+                    </div>
+                    <div class="footer_info footer_info3">
+                        <h2>FOLLOW US ON</h2>
+                        <div class="social_icons">
+                            <a href="https://www.facebook.com/lee.zhengjian.1" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/aulimping/" target="_blank"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://twitter.com/ZiYan72781323" target="_blank"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a href="https://www.youtube.com/channel/UC26yunKEXh1I3aHisPc0DWg" target="_blank"><i
+                                    class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer_info footer_info4">
+                        <h2>NEWSLETTER</h2>
+                        <div class="newsletter">
+                            <p>Want to get notified about our latest updates?</p>
+                            <form class="newsletter_form" id="newsletter_form">
+                                <input class="newsletter_email" type="email" name="newsletter_email"
+                                    placeholder="Enter Your E-mail" required>
+                                <button class="newsletter_signup" type="submit">SUBSCRIBE</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="payment_hr">
+            <div class="footer_info5">
+                <div class="payment_logo_wrapper">
+                    <!-- http://vectorlogo4u.com/wp-content/uploads/2019/10/Touch-n-Go-Ewallet.png -->
+                    <img id="tng_logo" src="images/TnG_logo.png" alt="TouchNGo_Logo">
+                    <!-- https://seeklogo.com/images/G/grab-pay-logo-A0CA65B6C4-seeklogo.com.png -->
+                    <img id="grabpay_logo" src="images/grab_pay_logo.png" alt="GrabPay_Logo">
+                    <!-- https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png -->
+                    <img id="visa_logo" src="images/visa_logo.png" alt="Visa_Logo">
+                    <!-- https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/773px-Mastercard-logo.svg.png -->
+                    <img id="master_logo" src="images/mastercard_logo.png" alt="Mastercard_logo">
+
+                    <img id="maybank_logo" src="images/maybank_logo.png" alt="Maybank_Logo">
+                </div>
+            </div>
+            <div class="footer_info6">
+                <p>© 2021 OutModern</p>
+                <hr>
+                <p><a href="terms.html">Terms of Use</a> | <a href="policy.html">Privacy Policy</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="overall_layout.js"></script>
+</body>
+
+</html>

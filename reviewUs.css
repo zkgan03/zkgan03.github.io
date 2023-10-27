@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&family=Libre+Baskerville&family=Lobster&display=swap");
+
+#rate_us_header {
+  background-image: url("images/ratepic1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top;
+  padding: 80px 0px;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  font-family: "Style Script", cursive;
+}
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  resize: vertical;
+}
+input[type="submit"] {
+  background-color: #050505;
+  color: white;
+  padding: 12px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Playfair Display", serif;
+}
+input[type="submit"]:hover {
+  background-color: #969696;
+}
+#legend {
+  background-color: #4a8b82;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 16px;
+  font-family: "Playfair Display", serif;
+  color: white;
+}
+#background {
+  border: none;
+  border-radius: 20px;
+  background-color: #84beb5;
+  background-image: linear-gradient(#84beb5, rgb(207, 228, 228));
+  box-shadow: 7px 10px 20px rgb(177, 176, 176);
+}
+#background:hover {
+  box-shadow: none;
+}
+#boxes {
+  padding: 10px;
+  margin: 10px 20px;
+}
+#boxbox {
+  padding: 10px;
+  margin: 10px;
+}
+#boxbox > p {
+  font-family: "Libre Baskerville", serif;
+  font-size: 16px;
+}
+.question {
+  margin: 5px;
+  font-family: "EB Garamond", serif;
+  font-size: 20px;
+}
+.inputbox {
+  border-radius: 2px;
+  padding: 50px;
+  margin: 10px;
+}
+
+/*Rate*/
+.star {
+  position: relative;
+  width: 250px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.rating__star {
+  font-size: 2em;
+  cursor: pointer;
+  color: #dabd18b2;
+  transition: filter linear 0.3s;
+}
+.rating__star:hover {
+  filter: drop-shadow(1px 1px 4px gold);
+}
+@media screen and (max-width: 600px) {
+  #rate_us_header > h1,
+  p {
+    padding: 10px;
+  }
+  #boxes {
+    padding: 0;
+    margin: 0;
+  }
+  .inputbox {
+    padding: 10px;
+    margin: none;
+  }
+}

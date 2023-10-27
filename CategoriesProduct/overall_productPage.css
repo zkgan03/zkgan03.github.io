@@ -1,0 +1,522 @@
+body {
+  overflow-x: hidden;
+}
+
+/* Replacing Overall Layout */
+
+@media screen and (max-width: 1250px) {
+  .bg-img {
+    display: none;
+  }
+  .wrapper {
+    width: 100%;
+    left: 0;
+  }
+  .logo, nav {
+    display: none;
+  }
+  .logo a img {
+    transition-duration: 0ms;
+  }
+  .navbar {
+    display: block;
+    padding: 0.5% 5% !important;
+  }
+  .ul0 {
+    display: flex;
+  }
+}
+
+/*style of title*/
+
+div.TxtSection {
+  text-align: center;
+  width: 75%;
+  margin: auto auto;
+}
+
+div.TxtSection h1 {
+  margin: 20px;
+}
+
+/*Product list wrapper*/
+
+div.Product {
+  width: 80%;
+  top: 180px;
+  display: block;
+  float: right;
+}
+
+ul.productListing {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+ul.productListing li {
+  list-style-type: none;
+  margin: 25px 4px;
+  display: inline-block;
+}
+
+li.productItem {
+  transition: 0.1s;
+  z-index: 0;
+}
+
+li.productItem:hover {
+  background-color: #f8efd6;
+  box-shadow: 2px 2px 20px rgb(141, 141, 141);
+  transform: translate(-2px, -2px);
+  transition: 0.1s;
+  z-index: 0;
+}
+
+ul.productListing li img {
+  width: 350px;
+  height: 350px;
+  display: block;
+  background-color: rgb(233, 231, 231);
+}
+
+ul.productListing li img:hover {
+  cursor: pointer;
+}
+
+/* Add to bag btn*/
+
+.productItem button {
+  position: absolute;
+  transform: translate(275px, 20px);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid white;
+  font-size: 1.3rem;
+  color: white;
+  pointer-events: none;
+  display: none;
+}
+
+.productItem:hover>button {
+  display: initial;
+}
+
+/*product detail*/
+
+.productInfo {
+  margin: 15px 30px;
+}
+
+.productTxt {
+  display: inline-block;
+  text-align: left;
+  font-size: 1.25rem;
+}
+
+.productTxt:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/*product price*/
+
+.productPrice {
+  display: block;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  margin-top: 8px;
+}
+
+/*product color box*/
+
+.productColor {
+  margin-top: 8px;
+  padding: 2px;
+}
+
+.white, 
+  .beige, 
+  .black, 
+  .lightGray, 
+  .blue, 
+  .darkBlue, 
+  .lightBlue, 
+  .militaryGreen, 
+  .navy, 
+  .red, 
+  .gold, 
+  .rose {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  box-shadow: 0 0 0 1px whitesmoke;
+  margin: auto 2.5px;
+  transition: 0.3s;
+}
+
+.white {
+  background-color: white;
+}
+
+.beige {
+  background-color: beige;
+}
+
+.black {
+  background-color: black;
+}
+
+.lightGray {
+  background-color: lightgray;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.darkBlue {
+  background-color: rgb(0, 49, 139);
+}
+
+.lightBlue {
+  background-color: lightblue;
+}
+
+.militaryGreen {
+  background-color: rgb(116, 136, 2);
+}
+
+.navy {
+  background-color: navy;
+}
+
+.red {
+  background-color: red;
+}
+
+.gold {
+  background-color: #ffe8bf;
+}
+
+.rose {
+  background-color: rgb(255, 188, 143);
+}
+
+.white:hover, 
+.beige:hover, 
+.black:hover, 
+.lightGray:hover, 
+.blue:hover, 
+.darkBlue:hover, 
+.lightBlue:hover, 
+.militaryGreen:hover, 
+.navy:hover, 
+.red:hover, 
+.gold:hover, 
+.rose:hover {
+  cursor: pointer;
+}
+
+.colorChosen {
+  box-shadow: 0 0 0 1px whitesmoke, 0 0 0 2px black;
+}
+
+/*style of filter*/
+
+div.leftFilter {
+  width: 17%;
+  display: block;
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+div.leftFilter i {
+  font-weight: 900 !important;
+}
+
+div.leftFilter>ul>h3 {
+  text-align: center;
+  margin: 20px;
+  font-weight: lighter;
+}
+
+div.leftFilter>ul>li {
+  list-style-type: none;
+  border-bottom: 1px solid rgba(63, 63, 63, 0.13);
+}
+
+div.leftFilter ul li i {
+  float: right;
+}
+
+ul.leftFilterDropDown>li {
+  list-style-type: none;
+  padding: 10px;
+}
+
+ul.leftFilterDropDown>li>input[type="radio"] {
+  margin: auto 10px;
+  cursor: pointer;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+div.leftFilterIcons {
+  z-index: 50;
+}
+
+div.leftFilterIcons i {
+  display: none;
+  font-weight: 900 !important;
+}
+
+/*filter txt style*/
+
+.leftFilterTitle {
+  padding: 10px;
+}
+
+.leftFilterTitle:hover {
+  background-color: #f8efd6;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.leftFilterTitle i {
+  font-weight: 900 !important;
+}
+
+/*style of radio button*/
+
+ul.leftFilterDropDown li input[type="radio"] {
+  display: none;
+}
+
+ul.leftFilterDropDown li label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  opacity: 0.6;
+}
+
+ul.leftFilterDropDown li label:hover {
+  cursor: pointer;
+  background-color: #f8efd6;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+ul.leftFilterDropDown li label:before {
+  position: relative;
+  content: "";
+  height: 19px;
+  width: 19px;
+  outline: 1px solid black;
+  outline-style: auto;
+  margin-right: 10px;
+  opacity: 0.5;
+}
+
+ul.leftFilterDropDown li input[type="radio"]:checked+label {
+  background-color: #f8efd6;
+  color: black;
+  opacity: 1;
+}
+
+ul.leftFilterDropDown li input[type="radio"]:checked+label:before {
+  height: 10px;
+  width: 10px;
+  border: 5px solid white;
+  background-color: black;
+  outline: 1px solid black;
+  outline-style: auto;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+/*Style of left filter drop down list for smaller width <MOBILE>*/
+
+.mob_filter {
+  height: 100%;
+  width: 0;
+  max-width: 400px;
+  position: fixed;
+  z-index: 98;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f8efd6;
+  transition: 500ms;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.mob_filter>ul {
+  position: absolute;
+  width: 100%;
+  top: 80px;
+}
+
+.mob_filter>ul>li {
+  border-bottom: 1px solid rgba(63, 63, 63, 0.13);
+  padding: 20px;
+}
+
+.mob_filter .closebtn {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 60px;
+  padding: 0;
+  text-decoration: none;
+  color: black;
+}
+
+/*pagiantion*/
+
+div.pagination {
+  display: block;
+  clear: both;
+  margin: 20px;
+  text-align: right;
+}
+
+div.pagination span {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  margin: 5px;
+  padding: 2px;
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+
+/*small width device*/
+
+@media screen and (max-width: 1100px) {
+
+  /*product list wrapper*/
+
+  div.Product {
+    width: 100%;
+    margin-left: 0px;
+    border: none;
+  }
+
+  /*product list*/
+
+  ul.productListing li{
+    margin: 1vw 1vw;
+  }
+
+  /* Filter */
+
+  div.leftFilter {
+    display: none;
+  }
+  div.leftFilterIcons {
+    padding: 10px;
+    left: -10px;
+    background-color: #f8efd6;
+    box-shadow: 1px 1px 10px 1px grey;
+    position: fixed;
+    border-radius: 0 10px 10px 0;
+    transition: 0.3s;
+  }
+  div.leftFilterIcons i {
+    display: inline-block;
+  }
+  div.leftFilterIcons:hover {
+    left: 0px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+}
+
+@media screen and (max-width: 730px) {
+
+  /* Product Title */
+
+  div.TxtSection h1 {
+    margin: 5vw;
+    font-size: 8vw;
+  }
+
+   /*add to cart button*/
+   
+   .productItem:hover>button {
+    display: none;
+  }
+
+  /*Product list*/
+
+  ul.productListing li {
+    max-width: 45%;
+  }
+  ul.productListing li img {
+    max-width: 100%;
+    height: auto;
+  }
+  .productInfo {
+    margin-left: 0;
+  }
+  .productTxt, .productPrice {
+    font-size: 4vw;
+  }
+  li.productItem:hover {
+    background-color: unset;
+    box-shadow: unset;
+    transform: unset;
+    transition: unset;
+  }
+
+  /*product color box*/
+
+  .white, 
+  .beige, 
+  .black, 
+  .lightGray, 
+  .blue, 
+  .darkBlue, 
+  .lightBlue, 
+  .militaryGreen, 
+  .navy, 
+  .red, 
+  .gold, 
+  .rose {
+    height: 3.5vw;
+    width: 3.5vw;
+  }
+
+  /*pagination*/
+
+  div.pagination span {
+    font-size: 3vw;
+    height: 5vw;
+    width: 5vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  /* Product text */
+
+  .productTxt {
+    text-decoration: underline;
+  }
+  .productTxt:active {
+    text-decoration: none;
+  }
+
+}

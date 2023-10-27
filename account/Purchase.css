@@ -1,0 +1,144 @@
+.container {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+}
+.smallcontainer {
+  display: unset;
+  width: 100%;
+}
+
+/*----cart item ----*/
+.cart-page {
+  width: 100%;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.purchase-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+.purchase-info img {
+  background-color: rgba(211, 211, 211, 0.5);
+}
+th {
+  text-align: left;
+  padding: 0.5em 1em;
+  color: black;
+  background-color: #84beb5;
+  font-weight: normal;
+}
+td {
+  padding: 10px 5px;
+}
+table tr > :nth-child(2),
+table tr > :nth-child(3) {
+  text-align: center;
+}
+td input {
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+  text-align: center;
+}
+td img {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+/*accountlist */
+.accountlist > ul {
+  display: unset;
+  text-align: unset;
+}
+.accountlist > ul > li {
+  text-align: unset;
+}
+.accountlist > p {
+  font-size: 40px;
+  margin-right: 2em;
+  margin-bottom: 1em;
+}
+.profile {
+  color: black;
+  text-decoration: none;
+  margin-right: 2em;
+  margin-top: 2em;
+}
+.addresses {
+  color: black;
+  text-decoration: none;
+  margin-right: 2em;
+  margin-top: 2em;
+}
+.purchase {
+  color: black;
+  text-decoration: none;
+  margin-right: 2em;
+  margin-top: 2em;
+}
+.accountlist > ul > li a:hover {
+  color: #84beb5;
+  text-decoration: none;
+}
+.accountlist > ul > li {
+  list-style: none;
+  font-size: large;
+}
+/*end of account list */
+
+/* tabs */
+.tablist {
+  display: flex;
+  height: 50px;
+  list-style: none;
+  justify-content: center;
+  width: 100%;
+}
+.tablist > li {
+  flex: 1 1 auto;
+  text-align: center;
+}
+[data-tab-content] {
+  display: none;
+}
+.active[data-tab-content] {
+  display: block;
+}
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  border-bottom: 1px solid black;
+}
+.tab {
+  cursor: pointer;
+  padding: 10px;
+}
+.tab.active {
+  background-color: #84beb5;
+}
+.tab:hover {
+  background-color: #84beb5;
+}
+.tab-content {
+  width: 100%;
+  height: 80%;
+}
+
+/* Media Queries for Mobile Users */
+@media screen and (max-width: 1100px) {
+  .container {
+    display: unset;
+    width: 100%;
+  }
+  .accountlist {
+    border: none;
+  }
+  .cart-page {
+    width: 100%;
+  }
+}

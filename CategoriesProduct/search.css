@@ -1,0 +1,25 @@
+div.search-results-wrapper div:nth-child(1){
+    display: inline-block;
+    margin-left: 300px;
+    padding: 20px;
+    font-size: 2rem;
+}
+
+@media screen and (max-width:1100px){
+    div.search-results-wrapper div:nth-child(1){
+        margin-left: 0;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width:790px){
+    div.search-results-wrapper div:nth-child(1){
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:588px){
+    div.search-results-wrapper div:nth-child(1){
+        font-size: 1.2rem;
+    }
+}

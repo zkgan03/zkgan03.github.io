@@ -1,0 +1,212 @@
+.acccontainer{
+    display: flex ;
+    width: 90%;
+    margin:2em auto;
+}
+
+/*profile overview */
+.profileoverview{
+    font-size: large;
+    margin: 0 auto ;
+    text-align: left;
+    width:25%;
+    min-width: 320px;
+
+}
+.profiletitle{
+    text-align: center;
+}
+.profileoverview>h1{
+    margin-bottom: 2em; 
+    font-size: 40px;
+}
+
+.name{
+    margin-bottom: 1em;
+    font-size: 24px;
+    
+}
+.email{
+    margin-bottom: 1em;
+    font-size: 24px;
+   
+}
+.phonenumber{
+    margin-top: 1em;
+    font-size: 24px;
+    
+}
+.editprofile{
+    margin-top: 2em;
+   
+}
+
+.editprofile>a{
+    color: black;
+    margin-top: 2em;
+    
+}
+.customerDetails{
+    margin-top: 50px;
+}
+/*accountlist */
+.accountlist{
+    border-right: 2px solid  black;
+    }
+.accountlist>p{
+    font-size: 40px;
+    margin-right: 2em;
+    margin-bottom: 1em;
+}
+
+.profile{
+    color: #84beb5;
+    text-decoration: none;  
+    margin-right: 2em;
+    margin-top: 2em;
+}
+
+.addresses{
+    color: black;
+    text-decoration: none;
+     margin-right: 2em;
+     margin-top: 2em;
+}
+
+
+.accountlist>ul>li a:hover{
+color: #84beb5;
+text-decoration: none;
+}
+.accountlist>ul>li{
+    list-style: none;    
+    font-size: large;
+   
+}
+
+
+
+/*end of account list */
+
+/* chat box */
+.box{
+    width: 200px;
+    overflow: auto;
+    max-height: 250px;
+    height: 250px;
+    border: 2px solid black ;
+    background-color: blanchedalmond;
+   
+}
+.chatbutton{
+    position: fixed;
+}
+.classinput{
+    width: 200px;
+   
+}
+
+
+.classinput>input    {
+    width: 100%;
+    height: 22px;
+    outline: none;
+    margin-bottom: 2.2em;
+    background-color: blanchedalmond;
+}
+
+.chattitle{
+    background-color:#84beb5 ;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    text-align: center;
+
+}
+
+.chatbox{
+    display: none;
+    bottom: 0;
+    z-index: 3;
+    border-radius: 10px 10px 0 0;
+    left:5%;
+    position: fixed;
+}
+
+.chat{
+    background-color: #f8efd6;
+    box-shadow: 1px 1px 10px 1px grey;
+    position: fixed;
+    bottom: 0;
+    width: 200px;
+    height: auto;
+    left:5%;
+    border-radius: 10px 10px 0 0;
+    z-index: 1;
+    font-size:20px ;
+}
+
+.closechat{
+    background-color: #f8efd6;
+    box-shadow: 1px 1px 10px 1px grey;
+    position: fixed;
+    bottom: 0;
+    width: 200px;
+    height: auto;
+    left:5%;
+    border-radius: 10px 10px 0 0;
+    font-size:20px ;
+}
+.chat:hover {
+    animation: upwards 1s;
+}
+
+@media screen and (max-width: 1100px) {
+    
+    .acccontainer{
+        display: unset;
+        width: 100%;
+        margin:2em auto;
+      }
+      .accountlist{
+        border:none;
+    }
+    
+    .profile{
+        color: black;
+        text-decoration: none;  
+        margin-right: 4em;
+    }
+    
+        .name{
+    font-size: 18px;
+    }
+    .email{
+    font-size: 18px;
+    }
+
+    .phonenumber{
+    font-size: 18px;
+    }
+    .profileoverview{
+        font-size:18px;
+        margin: 0 auto 2em;
+        text-align: left;
+    }
+    
+    .myaccount>h1{
+        margin-top: 2em;
+        font-size: 45px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:1100px) {
+
+    .accountlist>p{
+        font-size: 35px;
+    }
+    .chat{
+        display: none;
+    }
+}
